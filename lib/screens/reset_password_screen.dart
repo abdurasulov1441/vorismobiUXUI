@@ -54,7 +54,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
     }
 
     const snackBar = SnackBar(
-      content: Text('Сброс пароля осуществен. Проверьте почту'),
+      content: Text('Parolni tiklash bajarildi. Pochtangizni tekshiring'),
       backgroundColor: Colors.green,
     );
 
@@ -70,10 +70,6 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: AppColors.headerColor,
-        title: const Text(
-          'Сброс пароля',
-          style: AppStyle.fontStyle,
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -91,20 +87,26 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                         ? 'Введите правильный Email'
                         : null,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Введите Email',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  hintText: 'Emailni kiriting',
                   hintStyle: AppStyle.fontStyle,
+                  label: Icon(
+                    Icons.mail,
+                    color: AppColors.iconColor,
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.headerColor),
+                    backgroundColor: AppColors.iconColor),
                 onPressed: resetPassword,
-                child: const Center(
+                child: Center(
                     child: Text(
-                  'Сбросить пароль',
-                  style: AppStyle.fontStyle,
+                  'Parolni tiklash',
+                  style: AppStyle.fontStyle
+                      .copyWith(color: AppColors.backgroundColor),
                 )),
               ),
             ],

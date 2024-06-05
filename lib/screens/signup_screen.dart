@@ -143,12 +143,25 @@ class _SignUpScreen extends State<SignUpScreen> {
                         ? 'Введите правильный Email'
                         : null,
                 decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Введите Email',
-                  hintStyle: AppStyle.fontStyle,
-                ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    hintText: 'Email ni kiriting',
+                    hintStyle: AppStyle.fontStyle,
+                    label: Icon(
+                      Icons.mail,
+                      color: AppColors.iconColor,
+                    )),
               ),
               const SizedBox(height: 30),
+              Row(
+                children: [
+                  Text(
+                    'Parol',
+                    style: AppStyle.fontStyle
+                        .copyWith(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
               TextFormField(
                 style: TextStyle(color: AppColors.textColor),
                 autocorrect: false,
@@ -159,9 +172,14 @@ class _SignUpScreen extends State<SignUpScreen> {
                     ? 'Минимум 6 символов'
                     : null,
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  hintText: 'Введите пароль',
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  hintText: 'Parolni kiriting',
                   hintStyle: AppStyle.fontStyle,
+                  label: Icon(
+                    Icons.lock,
+                    color: AppColors.iconColor,
+                  ),
                   suffix: InkWell(
                     onTap: togglePasswordView,
                     child: Icon(
@@ -174,6 +192,15 @@ class _SignUpScreen extends State<SignUpScreen> {
                 ),
               ),
               const SizedBox(height: 30),
+              Row(
+                children: [
+                  Text(
+                    'Parolni tasdiqlash',
+                    style: AppStyle.fontStyle
+                        .copyWith(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
               TextFormField(
                 style: TextStyle(color: AppColors.textColor),
                 autocorrect: false,
@@ -184,9 +211,14 @@ class _SignUpScreen extends State<SignUpScreen> {
                     ? 'Минимум 6 символов'
                     : null,
                 decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  hintText: 'Введите пароль еще раз',
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  hintText: 'Parolni yana bir martda tering',
                   hintStyle: AppStyle.fontStyle,
+                  label: Icon(
+                    Icons.lock,
+                    color: AppColors.iconColor,
+                  ),
                   suffix: InkWell(
                     onTap: togglePasswordView,
                     child: Icon(
@@ -200,18 +232,22 @@ class _SignUpScreen extends State<SignUpScreen> {
               const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.headerColor),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    side: BorderSide(color: AppColors.backgroundColor),
+                    backgroundColor: AppColors.iconColor),
                 onPressed: signUp,
-                child: const Center(
+                child: Center(
                     child: Text(
-                  'Регистрация',
-                  style: AppStyle.fontStyle,
+                  'Ro\'yxatdan o\'tish',
+                  style: AppStyle.fontStyle
+                      .copyWith(color: AppColors.backgroundColor),
                 )),
               ),
               const SizedBox(height: 30),
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
-                child: const Text('Войти', style: AppStyle.fontStyle),
+                child: const Text('Kirish', style: AppStyle.fontStyle),
               ),
             ],
           ),
