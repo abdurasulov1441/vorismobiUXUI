@@ -46,7 +46,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
       } else {
         SnackBarService.showSnackBar(
           context,
-          'Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.',
+          'Неизвестная ошибка! Попробуйте еще раз или обратитесь в поддержку.', //i must edit
           true,
         );
         return;
