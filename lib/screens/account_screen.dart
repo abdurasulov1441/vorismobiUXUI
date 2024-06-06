@@ -23,45 +23,22 @@ class _AccountScreenState extends State<AccountScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
-      //resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: AppColors.headerColor,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios, // add custom icons also
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Sizning Email: ${user?.email}',
+            style: AppStyle.fontStyle.copyWith(color: AppColors.textColor),
           ),
-        ),
-        title: const Text('Аккаунт'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            tooltip: 'Open shopping cart',
+          TextButton(
             onPressed: () => signOut(),
+            child: Text(
+              'Chiqish',
+              style: AppStyle.fontStyle.copyWith(color: AppColors.textColor),
+            ),
           ),
         ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Ваш Email: ${user?.email}',
-              style: AppStyle.fontStyle,
-            ),
-            TextButton(
-              onPressed: () => signOut(),
-              child: const Text(
-                'Выйти',
-                style: AppStyle.fontStyle,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:flutter_application_1/components/appbar_title.dart';
 import 'package:flutter_application_1/components/listviewfor_mainpage.dart';
 import 'package:flutter_application_1/components/object_flat_container.dart';
 import 'package:flutter_application_1/screens/account_screen.dart';
+import 'package:flutter_application_1/screens/login_screen.dart';
 import 'package:flutter_application_1/screens/user_null.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
       //     ),
       //   ],
       // ),
-      body: (user == null) ? UserNull() : HomeNavBarItemBuilder(),
+      body: (user == null) ? LoginScreen() : HomeNavBarItemBuilder(),
       // bottomNavigationBar: (user == null) ? Text('data') : Text(''),
     );
   }
@@ -51,7 +52,9 @@ class HomeScreen extends StatelessWidget {
 
 //nav bar with page
 class HomeNavBarItemBuilder extends StatefulWidget {
-  const HomeNavBarItemBuilder({super.key});
+  const HomeNavBarItemBuilder({
+    super.key,
+  });
 
   @override
   State<HomeNavBarItemBuilder> createState() =>
@@ -93,18 +96,9 @@ class _BottomNavigationBarExampleState extends State<HomeNavBarItemBuilder> {
     ),
 /////////////////////////////////////////////////////////////////////////////// kabinet
     Column(
-      children: [
-        AppbarTitle(),
-        //AccountScreen()
-      ],
+      children: [AppbarTitle(), AccountScreen()],
     ),
-
-    Column(
-      children: [
-        AppbarTitle(),
-        //AccountScreen()
-      ],
-    ),
+////////////////////////////////////////////////////////////////////////////////// akkaunt
   ];
 
   void _onItemTapped(int index) {
