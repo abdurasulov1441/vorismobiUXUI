@@ -24,6 +24,7 @@ class ObjectSecurity extends StatelessWidget {
               IconButton(
                   onPressed: () {
                     Navigator.of(context).pop();
+                    model.resetColors();
                   },
                   icon: Icon(Icons.arrow_back)),
               Text(

@@ -44,7 +44,8 @@ class HomeScreen extends StatelessWidget {
       //     ),
       //   ],
       // ),
-      body: (user == null) ? LoginScreen() : HomeNavBarItemBuilder(),
+      body:
+          (user == null) ? const LoginScreen() : const HomeNavBarItemBuilder(),
       // bottomNavigationBar: (user == null) ? Text('data') : Text(''),
     );
   }
@@ -63,8 +64,6 @@ class HomeNavBarItemBuilder extends StatefulWidget {
 
 class _BottomNavigationBarExampleState extends State<HomeNavBarItemBuilder> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     //////////////////////////////////////////////////////////////////// asosiy sahifa
     Column(

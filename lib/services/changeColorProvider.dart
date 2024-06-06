@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 
@@ -64,5 +66,20 @@ class CounterProvider extends ChangeNotifier {
     }
 
     notifyListeners();
+  }
+
+  resetColors() {
+    Timer(Duration(seconds: 5), () => resetColors);
+    backcolor1 = AppColors.backgroundColor;
+    textColor1 = AppColors.iconGuardColor;
+    backcolor2 = AppColors.backgroundColor;
+    textColor2 = AppColors.iconGuardColor;
+    backcolor3 = AppColors.backgroundColor;
+    textColor3 = AppColors.iconGuardColor;
+    backcolor4 = AppColors.backgroundColor;
+    textColor4 = AppColors.iconGuardColor;
+
+    notifyListeners();
+    Timer(Duration(seconds: 5), () => resetColors);
   }
 }
