@@ -31,7 +31,7 @@ class ObjectFlatContainer extends StatelessWidget {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).popAndPushNamed(
+                  Navigator.of(context).pushNamed(
                       '/object_security'); //pushNamed('/object_security');
                 },
                 child: Container(
