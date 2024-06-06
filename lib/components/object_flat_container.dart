@@ -15,7 +15,7 @@ class ObjectFlatContainer extends StatelessWidget {
     return Card(
       color: AppColors.backgroundColor,
       shape: RoundedRectangleBorder(
-          side: BorderSide(color: AppColors.iconGuardColor, width: 2),
+          side: const BorderSide(color: AppColors.iconGuardColor, width: 2),
           borderRadius: BorderRadius.circular(15)),
       child: Container(
         width: 300,
@@ -29,46 +29,29 @@ class ObjectFlatContainer extends StatelessWidget {
               height: 250,
             ),
             Center(
-              child: Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: AppColors.iconGuardColor,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
-                  ),
-                  child: Center(
-                    child: Text(
-                      text,
-                      style: AppStyle.fontStyle
-                          .copyWith(color: AppColors.backgroundColor),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).popAndPushNamed(
+                      '/object_security'); //pushNamed('/object_security');
+                },
+                child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: const BoxDecoration(
+                      color: AppColors.iconGuardColor,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)),
                     ),
-                  )),
+                    child: Center(
+                      child: Text(
+                        text,
+                        style: AppStyle.fontStyle
+                            .copyWith(color: AppColors.backgroundColor),
+                      ),
+                    )),
+              ),
             )
-
-            // Container(
-            //   decoration: BoxDecoration(
-            //     color: Colors.blue,
-            //     borderRadius: BorderRadius.only(
-            //       topLeft: Radius.circular(20),
-            //       topRight: Radius.circular(10),
-            //       bottomLeft: Radius.circular(5),
-            //       bottomRight: Radius.circular(15),
-            //     ),
-            //   ),
-            //   color: Colors.red,
-            //   child: SizedBox(
-            //     width: double.infinity,
-            //     height: 50,
-            //     child: Center(
-            //         child: Text(
-            //       'Obyektingizni qo\'riqlovga topshiring',
-            //       style:
-            //           AppStyle.fontStyle.copyWith(color: AppColors.textColor),
-            //     )),
-            //   ),
-            // )
           ],
         ),
       ),

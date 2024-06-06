@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
 import 'package:flutter_application_1/components/listviewfor_mainpage.dart';
 import 'package:flutter_application_1/components/object_flat_container.dart';
+import 'package:flutter_application_1/screens/account_screen.dart';
 import 'package:flutter_application_1/screens/user_null.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 
@@ -94,6 +95,14 @@ class _BottomNavigationBarExampleState extends State<HomeNavBarItemBuilder> {
     Column(
       children: [
         AppbarTitle(),
+        //AccountScreen()
+      ],
+    ),
+
+    Column(
+      children: [
+        AppbarTitle(),
+        //AccountScreen()
       ],
     ),
   ];
