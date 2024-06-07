@@ -69,7 +69,6 @@ class CounterProvider extends ChangeNotifier {
   }
 
   resetColors() {
-    Timer(Duration(seconds: 5), () => resetColors);
     backcolor1 = AppColors.backgroundColor;
     textColor1 = AppColors.iconGuardColor;
     backcolor2 = AppColors.backgroundColor;
@@ -80,6 +79,5 @@ class CounterProvider extends ChangeNotifier {
     textColor4 = AppColors.iconGuardColor;
 
     notifyListeners();
-    Timer(Duration(seconds: 5), () => resetColors);
   }
 }
