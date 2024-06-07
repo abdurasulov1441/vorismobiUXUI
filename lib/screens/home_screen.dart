@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
@@ -44,14 +45,44 @@ class HomeScreen extends StatelessWidget {
       //     ),
       //   ],
       // ),
-      body:
-          (user == null) ? const LoginScreen() : const HomeNavBarItemBuilder(),
+      body: (user == null) ? const LoginScreen() : CheckUserData(),
       // bottomNavigationBar: (user == null) ? Text('data') : Text(''),
     );
   }
 }
 
-//nav bar with page
+class CheckUserData extends StatelessWidget {
+  const CheckUserData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+Widget _buildList() {
+  final user = FirebaseAuth.instance.currentUser;
+  return StreamBuilder<QuerySnapshot>(
+    stream: FirebaseFirestore.instance
+        .collection('${user?.email}')
+        .orderBy('timestamp')
+        .snapshots(),
+    builder: (context, snapshot) {
+      if (!snapshot.hasData) return CircularProgressIndicator();
+      final documents = snapshot.data!.docs;
+      return ListView(
+        children: documents.map((doc) {
+          final data = doc.data() as Map<String, dynamic>;
+          return ListTile(
+            title: Text('${data['name']} ${data['surname']}'),
+            subtitle: Text(data['phone'] ?? ''),
+          );
+        }).toList(),
+      );
+    },
+  );
+}
+
 class HomeNavBarItemBuilder extends StatefulWidget {
   const HomeNavBarItemBuilder({
     super.key,
