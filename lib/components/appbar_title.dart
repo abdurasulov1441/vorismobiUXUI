@@ -11,7 +11,7 @@ class AppbarTitle extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: 50,
+          height: 30,
           color: AppColors.iconGuardColor,
         ),
         Container(

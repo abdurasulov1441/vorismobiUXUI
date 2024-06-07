@@ -14,11 +14,16 @@ class ObjectSecurity extends StatelessWidget {
     final model = context.watch<CounterProvider>();
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: AppColors.backgroundColor,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: AppColors.backgroundColor,
+      // ),
       body: Column(
         children: [
+          Container(
+            width: double.infinity,
+            height: 30,
+            color: AppColors.iconGuardColor,
+          ),
           Row(
             children: [
               IconButton(
