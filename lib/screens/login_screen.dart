@@ -74,14 +74,14 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.headerColor,
         centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back,
-              color: AppColors.textColor,
-            )),
+        // leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     },
+        //     icon: Icon(
+        //       Icons.arrow_back,
+        //       color: AppColors.textColor,
+        //     )),
       ),
       body: SingleChildScrollView(
         child: Padding(

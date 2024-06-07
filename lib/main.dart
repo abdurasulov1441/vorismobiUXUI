@@ -49,6 +49,7 @@ class MyApp extends StatelessWidget {
             '/object_security': (context) => ObjectSecurity(),
             '/object_security_second_page': (context) =>
                 ObjectSecuritySecondPage(),
+            '/all_access': (context) => HomeNavBarItemBuilder(),
           },
           initialRoute: '/',
         ));

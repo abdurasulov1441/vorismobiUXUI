@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
@@ -23,23 +24,58 @@ class _AccountScreenState extends State<AccountScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SingleChildScrollView(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Sizning Email: ${user?.email}',
-            style: AppStyle.fontStyle.copyWith(color: AppColors.textColor),
-          ),
-          TextButton(
-            onPressed: () => signOut(),
-            child: Text(
-              'Chiqish',
-              style: AppStyle.fontStyle.copyWith(color: AppColors.textColor),
-            ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Sizning Email: ${user?.email}',
+                style: AppStyle.fontStyle.copyWith(color: AppColors.textColor),
+              ),
+              TextButton(
+                onPressed: () => signOut(),
+                child: Text(
+                  'Chiqish',
+                  style:
+                      AppStyle.fontStyle.copyWith(color: AppColors.textColor),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                  width: double.infinity,
+                  height: 200,
+                  child: Expanded(child: _buildList())),
+            ],
           ),
         ],
       ),
     );
   }
+}
+
+Widget _buildList() {
+  final user = FirebaseAuth.instance.currentUser;
+  return StreamBuilder<QuerySnapshot>(
+    stream: FirebaseFirestore.instance
+        .collection('${user?.email}')
+        .orderBy('timestamp')
+        .snapshots(),
+    builder: (context, snapshot) {
+      if (!snapshot.hasData) return CircularProgressIndicator();
+      final documents = snapshot.data!.docs;
+      return ListView(
+        children: documents.map((doc) {
+          final data = doc.data() as Map<String, dynamic>;
+          return ListTile(
+            title: Text('${data['name']} ${data['surname']}'),
+            subtitle: Text(data['phone'] ?? ''),
+          );
+        }).toList(),
+      );
+    },
+  );
 }
