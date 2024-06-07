@@ -18,6 +18,8 @@ class _SignUpScreen extends State<SignUpScreen> {
   TextEditingController passwordTextInputController = TextEditingController();
   TextEditingController passwordTextRepeatInputController =
       TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -109,18 +111,65 @@ class _SignUpScreen extends State<SignUpScreen> {
                 SizedBox(
                   height: 10,
                 ),
-                Image.asset(
-                  'assets/images/set.png',
-                  width: 100,
-                  height: 100,
+                Row(
+                  children: [
+                    Text(
+                      'Ism va Familiya',
+                      style: AppStyle.fontStyle
+                          .copyWith(fontWeight: FontWeight.bold),
+                    )
+                  ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
-                Text(
-                  'Qo\'riqlash Xizmati'.toUpperCase(),
-                  style: AppStyle.fontStyle
-                      .copyWith(fontSize: 25, fontWeight: FontWeight.bold),
+                TextFormField(
+                  style: TextStyle(color: AppColors.textColor),
+                  keyboardType: TextInputType.text,
+                  autocorrect: false,
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      hintText: 'Ism va Familiyangizni kiriting',
+                      hintStyle: AppStyle.fontStyle,
+                      label: Icon(
+                        Icons.person,
+                        color: AppColors.iconGuardColor,
+                      )),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Telefon raqam',
+                      style: AppStyle.fontStyle
+                          .copyWith(fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                TextFormField(
+                  style: TextStyle(color: AppColors.textColor),
+                  keyboardType: TextInputType.number,
+                  autocorrect: false,
+                  controller: _phoneController,
+                  decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(15))),
+                      hintText: 'Telefon raqamingizni kiriting',
+                      hintStyle: AppStyle.fontStyle,
+                      label: Icon(
+                        Icons.phone,
+                        color: AppColors.iconGuardColor,
+                      )),
+                ),
+                SizedBox(
+                  height: 5,
                 ),
                 Row(
                   children: [
@@ -150,10 +199,10 @@ class _SignUpScreen extends State<SignUpScreen> {
                       hintStyle: AppStyle.fontStyle,
                       label: Icon(
                         Icons.mail,
-                        color: AppColors.iconColor,
+                        color: AppColors.iconGuardColor,
                       )),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 5),
                 Row(
                   children: [
                     Text(
@@ -179,7 +228,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     hintStyle: AppStyle.fontStyle,
                     label: Icon(
                       Icons.lock,
-                      color: AppColors.iconColor,
+                      color: AppColors.iconGuardColor,
                     ),
                     suffix: InkWell(
                       onTap: togglePasswordView,
@@ -192,7 +241,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 5),
                 Row(
                   children: [
                     Text(
@@ -218,7 +267,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     hintStyle: AppStyle.fontStyle,
                     label: Icon(
                       Icons.lock,
-                      color: AppColors.iconColor,
+                      color: AppColors.iconGuardColor,
                     ),
                     suffix: InkWell(
                       onTap: togglePasswordView,
@@ -236,7 +285,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                       side: BorderSide(color: AppColors.backgroundColor),
-                      backgroundColor: AppColors.iconColor),
+                      backgroundColor: AppColors.iconGuardColor),
                   onPressed: signUp,
                   child: Center(
                       child: Text(
@@ -257,7 +306,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       onPressed: () => Navigator.of(context).pop(),
                       child: Text('Kirish',
                           style: AppStyle.fontStyle
-                              .copyWith(color: AppColors.iconColor)),
+                              .copyWith(color: AppColors.iconGuardColor)),
                     ),
                   ],
                 )

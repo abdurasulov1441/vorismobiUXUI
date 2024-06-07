@@ -152,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: AppStyle.fontStyle,
                         label: Icon(
                           Icons.mail,
-                          color: AppColors.iconColor,
+                          color: AppColors.iconGuardColor,
                         ),
                       ),
                     ),
@@ -186,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: AppStyle.fontStyle,
                         label: Icon(
                           Icons.lock,
-                          color: AppColors.iconColor,
+                          color: AppColors.iconGuardColor,
                         ),
                         suffix: InkWell(
                           onTap: togglePasswordView,
@@ -209,14 +209,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             'Parolingizni unutdingizmi?',
                             style: AppStyle.fontStyle
-                                .copyWith(color: AppColors.iconColor),
+                                .copyWith(color: AppColors.iconGuardColor),
                           ),
                         ),
                       ],
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.iconColor),
+                          backgroundColor: AppColors.iconGuardColor),
                       onPressed: login,
                       child: Center(
                           child: Text(
@@ -240,7 +240,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.of(context).pushNamed('/signup'),
                       child: Text('Ro\'yxatdan o\'ting',
                           style: AppStyle.fontStyle
-                              .copyWith(color: AppColors.iconColor)),
+                              .copyWith(color: AppColors.iconGuardColor)),
                     ),
                   ],
                 )
