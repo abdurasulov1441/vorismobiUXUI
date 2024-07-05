@@ -69,10 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.lightBackgroundColor,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: AppColors.headerColor,
+        backgroundColor: AppColors.lightHeaderColor,
         centerTitle: true,
         // leading: IconButton(
         //     onPressed: () {
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(
                       'Tizimga kirishingiz mumkin',
                       style: AppStyle.fontStyle
-                          .copyWith(color: AppColors.dividerColor),
+                          .copyWith(color: AppColors.lightDividerColor),
                     ),
                     SizedBox(
                       height: 10,
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.dividerColor),
+                      style: TextStyle(color: AppColors.lightDividerColor),
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       controller: emailTextInputController,
@@ -152,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: AppStyle.fontStyle,
                         label: Icon(
                           Icons.mail,
-                          color: AppColors.iconGuardColor,
+                          color: AppColors.lightIconGuardColor,
                         ),
                       ),
                     ),
@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.dividerColor),
+                      style: TextStyle(color: AppColors.lightDividerColor),
                       autocorrect: false,
                       controller: passwordTextInputController,
                       obscureText: isHiddenPassword,
@@ -186,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: AppStyle.fontStyle,
                         label: Icon(
                           Icons.lock,
-                          color: AppColors.iconGuardColor,
+                          color: AppColors.lightIconGuardColor,
                         ),
                         suffix: InkWell(
                           onTap: togglePasswordView,
@@ -209,20 +209,20 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             'Parolingizni unutdingizmi?',
                             style: AppStyle.fontStyle
-                                .copyWith(color: AppColors.iconGuardColor),
+                                .copyWith(color: AppColors.lightIconGuardColor),
                           ),
                         ),
                       ],
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.iconGuardColor),
+                          backgroundColor: AppColors.lightIconGuardColor),
                       onPressed: login,
                       child: Center(
                           child: Text(
                         'Kirish',
                         style: AppStyle.fontStyle.copyWith(
-                            color: AppColors.backgroundColor,
+                            color: AppColors.lightBackgroundColor,
                             fontWeight: FontWeight.bold),
                       )),
                     ),
@@ -240,7 +240,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.of(context).pushNamed('/signup'),
                       child: Text('Ro\'yxatdan o\'ting',
                           style: AppStyle.fontStyle
-                              .copyWith(color: AppColors.iconGuardColor)),
+                              .copyWith(color: AppColors.lightIconGuardColor)),
                     ),
                   ],
                 )

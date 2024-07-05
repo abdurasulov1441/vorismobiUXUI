@@ -7,7 +7,7 @@ class MiniRedAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.iconGuardColor,
+      color: AppColors.lightIconGuardColor,
       width: double.infinity,
       height: 30,
       child: Card(

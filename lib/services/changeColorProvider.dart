@@ -1,81 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 
-class CounterProvider extends ChangeNotifier {
-  Color backcolor1 = AppColors.backgroundColor;
-  Color textColor1 = AppColors.iconGuardColor;
+class ThemeProvider with ChangeNotifier {
+  bool _isDarkTheme = false;
 
-  Color backcolor2 = AppColors.backgroundColor;
-  Color textColor2 = AppColors.iconGuardColor;
+  bool get isDarkTheme => _isDarkTheme;
 
-  Color backcolor3 = AppColors.backgroundColor;
-  Color textColor3 = AppColors.iconGuardColor;
+  ThemeData get currentTheme => _isDarkTheme ? darkTheme : lightTheme;
 
-  Color backcolor4 = AppColors.backgroundColor;
-  Color textColor4 = AppColors.iconGuardColor;
-
-  changeColor1() {
-    if (backcolor1 == AppColors.backgroundColor &&
-        textColor1 == AppColors.iconGuardColor) {
-      backcolor1 = AppColors.iconGuardColor;
-      textColor1 = AppColors.backgroundColor;
-    } else {
-      backcolor1 = AppColors.backgroundColor;
-      textColor1 = AppColors.iconGuardColor;
-    }
-
+  void toggleTheme() {
+    _isDarkTheme = !_isDarkTheme;
     notifyListeners();
   }
 
-  changeColor2() {
-    if (backcolor2 == AppColors.backgroundColor &&
-        textColor2 == AppColors.iconGuardColor) {
-      backcolor2 = AppColors.iconGuardColor;
-      textColor2 = AppColors.backgroundColor;
-    } else {
-      backcolor2 = AppColors.backgroundColor;
-      textColor2 = AppColors.iconGuardColor;
-    }
+  ThemeData get lightTheme => ThemeData(
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: AppColors.lightBackgroundColor,
+        primaryColor: AppColors.lightHeaderColor,
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: AppColors.lightTextColor),
+          bodyMedium: TextStyle(color: AppColors.lightTextColor),
+        ),
+        dividerColor: AppColors.lightDividerColor,
+        iconTheme: IconThemeData(color: AppColors.lightIconColor),
+      );
 
-    notifyListeners();
-  }
-
-  changeColor3() {
-    if (backcolor3 == AppColors.backgroundColor &&
-        textColor3 == AppColors.iconGuardColor) {
-      backcolor3 = AppColors.iconGuardColor;
-      textColor3 = AppColors.backgroundColor;
-    } else {
-      backcolor3 = AppColors.backgroundColor;
-      textColor3 = AppColors.iconGuardColor;
-    }
-
-    notifyListeners();
-  }
-
-  changeColor4() {
-    if (backcolor4 == AppColors.backgroundColor &&
-        textColor4 == AppColors.iconGuardColor) {
-      backcolor4 = AppColors.iconGuardColor;
-      textColor4 = AppColors.backgroundColor;
-    } else {
-      backcolor4 = AppColors.backgroundColor;
-      textColor4 = AppColors.iconGuardColor;
-    }
-
-    notifyListeners();
-  }
-
-  resetColors() {
-    backcolor1 = AppColors.backgroundColor;
-    textColor1 = AppColors.iconGuardColor;
-    backcolor2 = AppColors.backgroundColor;
-    textColor2 = AppColors.iconGuardColor;
-    backcolor3 = AppColors.backgroundColor;
-    textColor3 = AppColors.iconGuardColor;
-    backcolor4 = AppColors.backgroundColor;
-    textColor4 = AppColors.iconGuardColor;
-
-    notifyListeners();
-  }
+  ThemeData get darkTheme => ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: AppColors.darkBackgroundColor,
+        primaryColor: AppColors.darkHeaderColor,
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: AppColors.darkTextColor),
+          bodyMedium: TextStyle(color: AppColors.darkTextColor),
+        ),
+        dividerColor: AppColors.darkDividerColor,
+        iconTheme: IconThemeData(color: AppColors.darkIconColor),
+      );
 }

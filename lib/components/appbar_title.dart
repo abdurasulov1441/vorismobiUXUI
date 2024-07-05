@@ -12,12 +12,13 @@ class AppbarTitle extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 30,
-          color: AppColors.iconGuardColor,
+          color: AppColors.lightIconGuardColor,
         ),
         Container(
           // color: AppColors.iconGuardColor,
           width: double.infinity,
           height: 50,
+
           margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 10),
           child: Column(
             children: [

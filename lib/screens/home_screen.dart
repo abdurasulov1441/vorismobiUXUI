@@ -1,13 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/account_screen.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
 import 'package:flutter_application_1/components/listviewfor_mainpage.dart';
 import 'package:flutter_application_1/components/object_flat_container.dart';
 import 'package:flutter_application_1/screens/account_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
+import 'package:flutter_application_1/services/changeColorProvider.dart';
 
 import 'package:flutter_application_1/style/app_colors.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,9 +17,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
-
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: themeProvider.isDarkTheme
+          ? AppColors.lightBackgroundColor
+          : AppColors.darkBackgroundColor,
       //resizeToAvoidBottomInset: false,
       // appBar: AppBar(
       //   backgroundColor: AppColors.headerColor,
@@ -85,16 +89,22 @@ class _BottomNavigationBarExampleState extends State<HomeNavBarItemBuilder> {
         ObjectFlatContainer(
           image: 'assets/images/image.png',
           text: 'Obyektingizni qo\'riqlovga topshiring',
+          route: '/object_security',
         ),
         ObjectFlatContainer(
           image: 'assets/images/image.png',
           text: 'Xonadoningizni qo\'riqlovga topshiring',
+          route: '/object_security',
         ),
       ],
     ),
 /////////////////////////////////////////////////////////////////////////////// kabinet
     Column(
-      children: [AppbarTitle(), AccountScreen()],
+      children: [
+        AppbarTitle(),
+        AccountScreen(),
+        ListForAccount(),
+      ],
     ),
 ////////////////////////////////////////////////////////////////////////////////// akkaunt
   ];
@@ -108,7 +118,7 @@ class _BottomNavigationBarExampleState extends State<HomeNavBarItemBuilder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.lightBackgroundColor,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -118,29 +128,29 @@ class _BottomNavigationBarExampleState extends State<HomeNavBarItemBuilder> {
             icon: Icon(Icons.home),
             label: 'Sahifa',
             tooltip: 'Asosiy sahifa',
-            backgroundColor: AppColors.iconGuardColor,
+            backgroundColor: AppColors.lightIconGuardColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.newspaper),
             label: 'Yangiliklar',
             tooltip: 'Yangiliklar',
-            backgroundColor: AppColors.iconGuardColor,
+            backgroundColor: AppColors.lightIconGuardColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.lock),
             label: 'Tariflar',
             tooltip: 'Qo\'riqqa topshirish',
-            backgroundColor: AppColors.iconGuardColor,
+            backgroundColor: AppColors.lightIconGuardColor,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Kabinet',
             tooltip: 'Shaxsiy kabinet',
-            backgroundColor: AppColors.iconGuardColor,
+            backgroundColor: AppColors.lightIconGuardColor,
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: AppColors.textColor,
+        selectedItemColor: AppColors.lightTextColor,
         onTap: _onItemTapped,
       ),
     );

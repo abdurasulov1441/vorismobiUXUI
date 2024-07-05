@@ -66,10 +66,10 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.lightBackgroundColor,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: AppColors.headerColor,
+        backgroundColor: AppColors.lightBackgroundColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -78,7 +78,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           child: Column(
             children: [
               TextFormField(
-                style: TextStyle(color: AppColors.textColor),
+                style: TextStyle(color: AppColors.lightTextColor),
                 keyboardType: TextInputType.emailAddress,
                 autocorrect: false,
                 controller: emailTextInputController,
@@ -93,20 +93,20 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                   hintStyle: AppStyle.fontStyle,
                   label: Icon(
                     Icons.mail,
-                    color: AppColors.iconColor,
+                    color: AppColors.lightIconColor,
                   ),
                 ),
               ),
               const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.iconColor),
+                    backgroundColor: AppColors.lightIconColor),
                 onPressed: resetPassword,
                 child: Center(
                     child: Text(
                   'Parolni tiklash',
                   style: AppStyle.fontStyle
-                      .copyWith(color: AppColors.backgroundColor),
+                      .copyWith(color: AppColors.lightBackgroundColor),
                 )),
               ),
             ],

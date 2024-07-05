@@ -84,7 +84,7 @@ class _SignUpScreen extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      backgroundColor: AppColors.lightBackgroundColor,
       resizeToAvoidBottomInset: false,
       // appBar: AppBar(
       //   backgroundColor: AppColors.headerColor,
@@ -120,7 +120,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       style: AppStyle.fontStyle.copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.iconGuardColor),
+                          color: AppColors.lightIconGuardColor),
                     ),
                   ],
                 ),
@@ -145,7 +145,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.textColor),
+                      style: TextStyle(color: AppColors.lightTextColor),
                       keyboardType: TextInputType.text,
                       autocorrect: false,
                       controller: _nameController,
@@ -157,7 +157,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                           hintStyle: AppStyle.fontStyle,
                           label: Icon(
                             Icons.person,
-                            color: AppColors.iconGuardColor,
+                            color: AppColors.lightIconGuardColor,
                           )),
                     ),
                     SizedBox(
@@ -176,7 +176,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.textColor),
+                      style: TextStyle(color: AppColors.lightTextColor),
                       keyboardType: TextInputType.number,
                       autocorrect: false,
                       controller: _phoneController,
@@ -188,7 +188,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                           hintStyle: AppStyle.fontStyle,
                           label: Icon(
                             Icons.phone,
-                            color: AppColors.iconGuardColor,
+                            color: AppColors.lightIconGuardColor,
                           )),
                     ),
                     SizedBox(
@@ -207,7 +207,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.textColor),
+                      style: TextStyle(color: AppColors.lightTextColor),
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       controller: emailTextInputController,
@@ -223,7 +223,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                           hintStyle: AppStyle.fontStyle,
                           label: Icon(
                             Icons.mail,
-                            color: AppColors.iconGuardColor,
+                            color: AppColors.lightIconGuardColor,
                           )),
                     ),
                     const SizedBox(height: 5),
@@ -237,7 +237,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       ],
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.textColor),
+                      style: TextStyle(color: AppColors.lightTextColor),
                       autocorrect: false,
                       controller: passwordTextInputController,
                       obscureText: isHiddenPassword,
@@ -253,7 +253,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                         hintStyle: AppStyle.fontStyle,
                         label: Icon(
                           Icons.lock,
-                          color: AppColors.iconGuardColor,
+                          color: AppColors.lightIconGuardColor,
                         ),
                         suffix: InkWell(
                           onTap: togglePasswordView,
@@ -261,7 +261,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                             isHiddenPassword
                                 ? Icons.visibility_off
                                 : Icons.visibility,
-                            color: AppColors.textColor,
+                            color: AppColors.lightTextColor,
                           ),
                         ),
                       ),
@@ -277,7 +277,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       ],
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.textColor),
+                      style: TextStyle(color: AppColors.lightTextColor),
                       autocorrect: false,
                       controller: passwordTextRepeatInputController,
                       obscureText: isHiddenPassword,
@@ -293,7 +293,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                         hintStyle: AppStyle.fontStyle,
                         label: Icon(
                           Icons.lock,
-                          color: AppColors.iconGuardColor,
+                          color: AppColors.lightIconGuardColor,
                         ),
                         suffix: InkWell(
                           onTap: togglePasswordView,
@@ -301,7 +301,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                               isHiddenPassword
                                   ? Icons.visibility_off
                                   : Icons.visibility,
-                              color: AppColors.textColor),
+                              color: AppColors.lightTextColor),
                         ),
                       ),
                     ),
@@ -310,14 +310,15 @@ class _SignUpScreen extends State<SignUpScreen> {
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          side: BorderSide(color: AppColors.backgroundColor),
-                          backgroundColor: AppColors.iconGuardColor),
+                          side:
+                              BorderSide(color: AppColors.lightBackgroundColor),
+                          backgroundColor: AppColors.lightIconGuardColor),
                       onPressed: signUp,
                       child: Center(
                           child: Text(
                         'Ro\'yxatdan o\'tish',
                         style: AppStyle.fontStyle
-                            .copyWith(color: AppColors.backgroundColor),
+                            .copyWith(color: AppColors.lightBackgroundColor),
                       )),
                     ),
                     const SizedBox(height: 30),
@@ -331,8 +332,8 @@ class _SignUpScreen extends State<SignUpScreen> {
                         TextButton(
                           onPressed: () => Navigator.of(context).pop(),
                           child: Text('Kirish',
-                              style: AppStyle.fontStyle
-                                  .copyWith(color: AppColors.iconGuardColor)),
+                              style: AppStyle.fontStyle.copyWith(
+                                  color: AppColors.lightIconGuardColor)),
                         ),
                       ],
                     )

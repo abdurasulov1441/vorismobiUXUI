@@ -11,7 +11,6 @@ class ObjectSecuritySecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = context.watch<CounterProvider>();
     final TextEditingController _nameController = TextEditingController();
     final TextEditingController _surnameController = TextEditingController();
     final TextEditingController _phoneController = TextEditingController();
@@ -39,13 +38,12 @@ class ObjectSecuritySecondPage extends StatelessWidget {
               IconButton(
                   onPressed: () {
                     Navigator.of(context).pop();
-                    model.resetColors();
                   },
                   icon: Icon(Icons.arrow_back)),
               Text(
                 'Saf Bo\'linmalari Orqali Qo\'riqlash',
                 style: AppStyle.fontStyle.copyWith(
-                    color: AppColors.iconGuardColor,
+                    color: AppColors.lightIconGuardColor,
                     fontWeight: FontWeight.bold),
               )
             ],

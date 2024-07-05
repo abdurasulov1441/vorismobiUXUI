@@ -46,6 +46,7 @@ dependencies:
   simple_floating_bottom_nav_bar: ^0.0.3
   dot_navigation_bar: ^1.0.2
   cloud_firestore: ^4.17.5
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:

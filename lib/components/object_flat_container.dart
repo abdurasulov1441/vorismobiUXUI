@@ -7,15 +7,18 @@ class ObjectFlatContainer extends StatelessWidget {
     super.key,
     required this.image,
     required this.text,
+    required this.route,
   });
   final String image;
   final String text;
+  final String route;
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.backgroundColor,
+      color: AppColors.lightBackgroundColor,
       shape: RoundedRectangleBorder(
-          side: const BorderSide(color: AppColors.iconGuardColor, width: 2),
+          side:
+              const BorderSide(color: AppColors.lightIconGuardColor, width: 2),
           borderRadius: BorderRadius.circular(15)),
       child: Container(
         width: 300,
@@ -31,14 +34,14 @@ class ObjectFlatContainer extends StatelessWidget {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pushNamed(
-                      '/object_security'); //pushNamed('/object_security');
+                  Navigator.of(context)
+                      .pushNamed(route); //pushNamed('/object_security');
                 },
                 child: Container(
                     width: double.infinity,
                     height: 50,
                     decoration: const BoxDecoration(
-                      color: AppColors.iconGuardColor,
+                      color: AppColors.lightIconGuardColor,
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15)),
@@ -47,7 +50,7 @@ class ObjectFlatContainer extends StatelessWidget {
                       child: Text(
                         text,
                         style: AppStyle.fontStyle
-                            .copyWith(color: AppColors.backgroundColor),
+                            .copyWith(color: AppColors.lightBackgroundColor),
                       ),
                     )),
               ),
