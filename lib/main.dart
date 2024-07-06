@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/screens/account_screen.dart';
 import 'package:flutter_application_1/screens/home_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
@@ -15,6 +16,16 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.transparent,
+    ),
+  );
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
   runApp(const MyApp());
 }
 
@@ -34,7 +45,7 @@ class MyApp extends StatelessWidget {
             theme: themeProvider.currentTheme,
             routes: {
               '/': (context) => const FirebaseStream(),
-              '/home': (context) => const HomeScreen(),
+              '/home': (context) => HomeScreen(),
               '/account': (context) => const AccountScreen(),
               '/login': (context) => const LoginScreen(),
               '/signup': (context) => const SignUpScreen(),
@@ -43,7 +54,7 @@ class MyApp extends StatelessWidget {
               '/object_security': (context) => ObjectSecurity(),
               '/object_security_second_page': (context) =>
                   ObjectSecuritySecondPage(),
-              '/all_access': (context) => HomeNavBarItemBuilder(),
+              // '/all_access': (context) => HomeNavBarItemBuilder(),
             },
             initialRoute: '/',
           );
