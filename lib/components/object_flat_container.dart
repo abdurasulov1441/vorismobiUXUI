@@ -20,7 +20,7 @@ class ObjectFlatContainer extends StatelessWidget {
           side:
               const BorderSide(color: AppColors.lightIconGuardColor, width: 2),
           borderRadius: BorderRadius.circular(15)),
-      child: Container(
+      child: SizedBox(
         width: 300,
         height: 300,
         child: Column(

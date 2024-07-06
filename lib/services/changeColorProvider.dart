@@ -17,23 +17,23 @@ class ThemeProvider with ChangeNotifier {
         brightness: Brightness.light,
         scaffoldBackgroundColor: AppColors.lightBackgroundColor,
         primaryColor: AppColors.lightHeaderColor,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyLarge: TextStyle(color: AppColors.lightTextColor),
           bodyMedium: TextStyle(color: AppColors.lightTextColor),
         ),
         dividerColor: AppColors.lightDividerColor,
-        iconTheme: IconThemeData(color: AppColors.lightIconColor),
+        iconTheme: const IconThemeData(color: AppColors.lightIconColor),
       );
 
   ThemeData get darkTheme => ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: AppColors.darkBackgroundColor,
         primaryColor: AppColors.darkHeaderColor,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyLarge: TextStyle(color: AppColors.darkTextColor),
           bodyMedium: TextStyle(color: AppColors.darkTextColor),
         ),
         dividerColor: AppColors.darkDividerColor,
-        iconTheme: IconThemeData(color: AppColors.darkIconColor),
+        iconTheme: const IconThemeData(color: AppColors.darkIconColor),
       );
 }

@@ -78,7 +78,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
           child: Column(
             children: [
               TextFormField(
-                style: TextStyle(color: AppColors.lightTextColor),
+                style: const TextStyle(color: AppColors.lightTextColor),
                 keyboardType: TextInputType.emailAddress,
                 autocorrect: false,
                 controller: emailTextInputController,

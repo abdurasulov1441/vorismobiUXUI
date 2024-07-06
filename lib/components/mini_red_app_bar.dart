@@ -10,7 +10,7 @@ class MiniRedAppBar extends StatelessWidget {
       color: AppColors.lightIconGuardColor,
       width: double.infinity,
       height: 30,
-      child: Card(
+      child: const Card(
         elevation: 10,
         color: Colors.transparent,
       ),

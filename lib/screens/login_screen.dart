@@ -44,8 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
         password: passwordTextInputController.text.trim(),
       );
     } on FirebaseAuthException catch (e) {
-      print(e.code);
-
       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
         SnackBarService.showSnackBar(
           context,
@@ -99,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: AppStyle.fontStyle
                           .copyWith(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -107,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: AppStyle.fontStyle
                           .copyWith(color: AppColors.lightDividerColor),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Image.asset(
@@ -120,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: AppStyle.fontStyle
                           .copyWith(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -132,11 +130,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightDividerColor),
+                      style:
+                          const TextStyle(color: AppColors.lightDividerColor),
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       controller: emailTextInputController,
@@ -166,11 +165,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightDividerColor),
+                      style:
+                          const TextStyle(color: AppColors.lightDividerColor),
                       autocorrect: false,
                       controller: passwordTextInputController,
                       obscureText: isHiddenPassword,
@@ -184,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 BorderRadius.all(Radius.circular(15))),
                         hintText: 'Parolingizni kiriting',
                         hintStyle: AppStyle.fontStyle,
-                        label: Icon(
+                        label: const Icon(
                           Icons.lock,
                           color: AppColors.lightIconGuardColor,
                         ),
@@ -231,7 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Akkauntingiz yo\'qmi?',
                       style: AppStyle.fontStyle,
                     ),

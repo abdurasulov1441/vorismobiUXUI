@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/screens/account_screen.dart';
-import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/shartnomalar.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/account_screen.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/home_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
 import 'package:flutter_application_1/screens/object_security.dart';
 import 'package:flutter_application_1/screens/object_security_second_page.dart';
@@ -45,16 +46,16 @@ class MyApp extends StatelessWidget {
             theme: themeProvider.currentTheme,
             routes: {
               '/': (context) => const FirebaseStream(),
-              '/home': (context) => HomeScreen(),
+              '/home': (context) => const HomeScreen(),
               '/account': (context) => const AccountScreen(),
               '/login': (context) => const LoginScreen(),
               '/signup': (context) => const SignUpScreen(),
               '/reset_password': (context) => const ResetPasswordScreen(),
               '/verify_email': (context) => const VerifyEmailScreen(),
-              '/object_security': (context) => ObjectSecurity(),
+              '/object_security': (context) => const ObjectSecurity(),
               '/object_security_second_page': (context) =>
-                  ObjectSecuritySecondPage(),
-              // '/all_access': (context) => HomeNavBarItemBuilder(),
+                  const ObjectSecuritySecondPage(),
+              '/shartnoma': (context) => const Shartnomalar(),
             },
             initialRoute: '/',
           );

@@ -102,7 +102,7 @@ class _SignUpScreen extends State<SignUpScreen> {
           key: formKey,
           child: Column(
             children: [
-              MiniRedAppBar(),
+              const MiniRedAppBar(),
               Container(
                 width: double.infinity,
                 height: 40,
@@ -114,7 +114,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(Icons.arrow_back)),
+                        icon: const Icon(Icons.arrow_back)),
                     Text(
                       'Yangi Akkaunt Yarating',
                       style: AppStyle.fontStyle.copyWith(
@@ -129,7 +129,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                 padding: const EdgeInsets.only(left: 30, right: 30),
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -141,11 +141,11 @@ class _SignUpScreen extends State<SignUpScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightTextColor),
+                      style: const TextStyle(color: AppColors.lightTextColor),
                       keyboardType: TextInputType.text,
                       autocorrect: false,
                       controller: _nameController,
@@ -160,7 +160,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                             color: AppColors.lightIconGuardColor,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -172,11 +172,11 @@ class _SignUpScreen extends State<SignUpScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightTextColor),
+                      style: const TextStyle(color: AppColors.lightTextColor),
                       keyboardType: TextInputType.number,
                       autocorrect: false,
                       controller: _phoneController,
@@ -191,7 +191,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                             color: AppColors.lightIconGuardColor,
                           )),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
@@ -203,11 +203,11 @@ class _SignUpScreen extends State<SignUpScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightTextColor),
+                      style: const TextStyle(color: AppColors.lightTextColor),
                       keyboardType: TextInputType.emailAddress,
                       autocorrect: false,
                       controller: emailTextInputController,
@@ -237,7 +237,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       ],
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightTextColor),
+                      style: const TextStyle(color: AppColors.lightTextColor),
                       autocorrect: false,
                       controller: passwordTextInputController,
                       obscureText: isHiddenPassword,
@@ -251,7 +251,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                                 BorderRadius.all(Radius.circular(15))),
                         hintText: 'Parolni kiriting',
                         hintStyle: AppStyle.fontStyle,
-                        label: Icon(
+                        label: const Icon(
                           Icons.lock,
                           color: AppColors.lightIconGuardColor,
                         ),
@@ -277,7 +277,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                       ],
                     ),
                     TextFormField(
-                      style: TextStyle(color: AppColors.lightTextColor),
+                      style: const TextStyle(color: AppColors.lightTextColor),
                       autocorrect: false,
                       controller: passwordTextRepeatInputController,
                       obscureText: isHiddenPassword,
@@ -291,7 +291,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                                 BorderRadius.all(Radius.circular(15))),
                         hintText: 'Parolni yana bir martda tering',
                         hintStyle: AppStyle.fontStyle,
-                        label: Icon(
+                        label: const Icon(
                           Icons.lock,
                           color: AppColors.lightIconGuardColor,
                         ),
@@ -310,8 +310,8 @@ class _SignUpScreen extends State<SignUpScreen> {
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          side:
-                              BorderSide(color: AppColors.lightBackgroundColor),
+                          side: const BorderSide(
+                              color: AppColors.lightBackgroundColor),
                           backgroundColor: AppColors.lightIconGuardColor),
                       onPressed: signUp,
                       child: Center(
@@ -325,7 +325,7 @@ class _SignUpScreen extends State<SignUpScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Akkauntingiz bormi?',
                           style: AppStyle.fontStyle,
                         ),

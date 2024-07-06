@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/home_screen.dart';
 import 'package:flutter_application_1/services/snack_bar.dart';
 
 class VerifyEmailScreen extends StatefulWidget {
@@ -45,8 +45,6 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
       isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
     });
 
-    print(isEmailVerified);
-
     if (isEmailVerified) timer?.cancel();
   }
 
@@ -60,7 +58,6 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
 
       setState(() => canResendEmail = true);
     } catch (e) {
-      print(e);
       if (mounted) {
         SnackBarService.showSnackBar(
           context,
@@ -74,7 +71,7 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
 
   @override
   Widget build(BuildContext context) => isEmailVerified
-      ? HomeScreen()
+      ? const HomeScreen()
       : Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(

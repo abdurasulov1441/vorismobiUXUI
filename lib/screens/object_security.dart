@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/object_flat_container.dart';
-import 'package:flutter_application_1/components/object_flat_container_full.dart';
 import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class ObjectSecurity extends StatelessWidget {
@@ -19,8 +16,6 @@ class ObjectSecurity extends StatelessWidget {
       backgroundColor: themeProvider.isDarkTheme
           ? AppColors.darkBackgroundColor
           : AppColors.lightBackgroundColor,
-      //   backgroundColor: AppColors.backgroundColor,
-      // ),
       body: Column(
         children: [
           Container(
@@ -36,7 +31,7 @@ class ObjectSecurity extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: Icon(Icons.arrow_back)),
+                    icon: const Icon(Icons.arrow_back)),
                 Text(
                   'Obyektingizni qo\'riqlovga topshiring',
                   style: AppStyle.fontStyle.copyWith(
@@ -51,11 +46,6 @@ class ObjectSecurity extends StatelessWidget {
           //   width: 500,
           //   height: 500,
           // ),
-
-          ObjectFlatContainerFull(
-              image: 'assets/images/saf_bilan.png',
-              text: 'text',
-              route: '/home')
         ],
       ),
     );
