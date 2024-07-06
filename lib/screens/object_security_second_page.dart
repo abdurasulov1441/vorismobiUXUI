@@ -1,19 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
-import 'package:provider/provider.dart';
 
 class ObjectSecuritySecondPage extends StatelessWidget {
   const ObjectSecuritySecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _nameController = TextEditingController();
-    final TextEditingController _surnameController = TextEditingController();
-    final TextEditingController _phoneController = TextEditingController();
+    final TextEditingController nameController = TextEditingController();
+    final TextEditingController surnameController = TextEditingController();
+    final TextEditingController phoneController = TextEditingController();
 
     // model.resetColors();
     return Scaffold(
@@ -30,7 +28,7 @@ class ObjectSecuritySecondPage extends StatelessWidget {
       // ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           Row(
@@ -39,7 +37,7 @@ class ObjectSecuritySecondPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  icon: Icon(Icons.arrow_back)),
+                  icon: const Icon(Icons.arrow_back)),
               Text(
                 'Saf Bo\'linmalari Orqali Qo\'riqlash',
                 style: AppStyle.fontStyle.copyWith(
@@ -49,30 +47,31 @@ class ObjectSecuritySecondPage extends StatelessWidget {
             ],
           ),
           TextField(
-            controller: _nameController,
-            decoration: InputDecoration(labelText: 'Enter your name'),
+            controller: nameController,
+            decoration: const InputDecoration(labelText: 'Enter your name'),
           ),
           TextField(
-            controller: _surnameController,
-            decoration: InputDecoration(labelText: 'Enter your surname'),
+            controller: surnameController,
+            decoration: const InputDecoration(labelText: 'Enter your surname'),
           ),
           TextField(
-            controller: _phoneController,
-            decoration: InputDecoration(labelText: 'Enter your phone number'),
+            controller: phoneController,
+            decoration:
+                const InputDecoration(labelText: 'Enter your phone number'),
             keyboardType: TextInputType.phone,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               _saveData(
-                _nameController.text,
-                _surnameController.text,
-                _phoneController.text,
+                nameController.text,
+                surnameController.text,
+                phoneController.text,
               );
             },
-            child: Text('Save to Firestore'),
+            child: const Text('Save to Firestore'),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(child: _buildList()),
         ],
       ),
@@ -98,7 +97,7 @@ Widget _buildList() {
         .orderBy('timestamp')
         .snapshots(),
     builder: (context, snapshot) {
-      if (!snapshot.hasData) return CircularProgressIndicator();
+      if (!snapshot.hasData) return const CircularProgressIndicator();
       final documents = snapshot.data!.docs;
       return ListView(
         children: documents.map((doc) {
