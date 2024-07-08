@@ -30,7 +30,7 @@ class ObjectSecurity extends StatelessWidget {
             ObjectFlatContainer(
                 image: 'assets/images/default.png',
                 text: 'Saf bo\'linmalari orqali qo\'riqlash',
-                route: 'SAF'),
+                route: '/from_object'),
             ObjectFlatContainer(
                 image: 'assets/images/default.png',
                 text:

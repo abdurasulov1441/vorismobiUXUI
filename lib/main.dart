@@ -5,6 +5,7 @@ import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/shart
 import 'package:flutter_application_1/screens/Pages_Basic/account_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/home_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/flat_security.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/saf_bilanobject.dart';
 import 'package:flutter_application_1/screens/auth_and_reg_pages/login_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/object_security.dart';
 
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
               '/object_security': (context) => const ObjectSecurity(),
               '/shartnoma': (context) => const Shartnomalar(),
               '/flat': (context) => const FlatSecurity(),
+              'from_object': (context) => SimpleForm(),
             },
             initialRoute: '/',
           );
