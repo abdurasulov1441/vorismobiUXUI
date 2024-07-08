@@ -32,7 +32,10 @@ class MiniRedTitle extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: const Icon(Icons.arrow_back)),
+              icon: const Icon(
+                Icons.arrow_back,
+                color: AppColors.lightIconGuardColor,
+              )),
           Text(
             title,
             style: AppStyle.fontStyle.copyWith(
