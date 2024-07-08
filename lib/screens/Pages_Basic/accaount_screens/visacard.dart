@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/mini_red_app_bar.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
-import 'package:flutter_application_1/style/app_style.dart';
+
 import 'package:u_credit_card/u_credit_card.dart';
 
 class Cards extends StatelessWidget {
