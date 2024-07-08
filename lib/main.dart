@@ -5,8 +5,8 @@ import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/shart
 import 'package:flutter_application_1/screens/Pages_Basic/account_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/home_screen.dart';
 import 'package:flutter_application_1/screens/login_screen.dart';
-import 'package:flutter_application_1/screens/object_security.dart';
-import 'package:flutter_application_1/screens/object_security_second_page.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/object_security.dart';
+
 import 'package:flutter_application_1/screens/reset_password_screen.dart';
 import 'package:flutter_application_1/screens/signup_screen.dart';
 import 'package:flutter_application_1/screens/verify_email_screen.dart';
@@ -53,8 +53,6 @@ class MyApp extends StatelessWidget {
               '/reset_password': (context) => const ResetPasswordScreen(),
               '/verify_email': (context) => const VerifyEmailScreen(),
               '/object_security': (context) => const ObjectSecurity(),
-              '/object_security_second_page': (context) =>
-                  const ObjectSecuritySecondPage(),
               '/shartnoma': (context) => const Shartnomalar(),
             },
             initialRoute: '/',

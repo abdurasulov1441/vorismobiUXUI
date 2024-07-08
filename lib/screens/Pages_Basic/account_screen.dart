@@ -1,10 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/shartnomalar.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
 import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:provider/provider.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -73,14 +75,14 @@ class _AccountScreenState extends State<AccountScreen> {
       'tungi_rejim.svg',
       'logout.svg',
     ];
-    final List route = [
-      'shartnoma',
-      'home',
-      'home',
-      'home',
-      'home',
-      '1',
-      '',
+    final List<Widget> route = [
+      Shartnomalar(),
+      Shartnomalar(),
+      Shartnomalar(),
+      Shartnomalar(),
+      Shartnomalar(),
+      Divider(),
+      Shartnomalar(),
     ];
     return Scaffold(
       body: SizedBox(
@@ -183,17 +185,21 @@ class _AccountScreenState extends State<AccountScreen> {
                                   : AppColors.lightTextColor),
                         ),
                         onTap: () {
-                          if (route[index] == '') {
+                          print(name[index]);
+                          if (name[index] == 'Chiqish') {
                             showLogoutDialog(context);
-                          } else if (route[index] == '1') {
+                          } else if (name[index] == 'Qorong\'u rejim') {
                             null;
                           } else {
-                            Navigator.of(context).pushNamed('/${route[index]}');
+                            pushWithoutNavBar(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => route[index]));
                           }
                         },
                         //leading: Image.asset(images[index],width: 50,height: 50,),
                         textColor: Colors.white,
-                        trailing: route[index] == '1'
+                        trailing: name[index] == 'Qorong\'u rejim'
                             ? Switch(
                                 value: themeProvider.isDarkTheme,
                                 onChanged: (value) {

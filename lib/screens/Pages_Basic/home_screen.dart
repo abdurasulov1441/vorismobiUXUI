@@ -63,28 +63,30 @@ class BottomNavBar extends StatelessWidget {
           screen: const HomePageElements(),
           item: ItemConfig(
             icon: const Icon(Icons.home),
-            title: "Home",
+            title: "Sahifa",
           ),
         ),
         PersistentTabConfig(
           screen: const NewsScreen(),
           item: ItemConfig(
             icon: const Icon(Icons.newspaper),
-            title: "Messages",
+            title: "Yangiliklar",
           ),
         ),
         PersistentTabConfig(
           screen: const SendRequestSafingScreen(),
           item: ItemConfig(
-            icon: const Icon(Icons.lock),
-            title: "Settings",
+            icon: const Icon(Icons.book),
+            title: "Tariflar",
           ),
         ),
+
+        //pushScreenWithoutNavBar(context, MaterialPageRoute(builder: (context) =>));
         PersistentTabConfig(
           screen: const AccountScreen(),
           item: ItemConfig(
             icon: const Icon(Icons.person),
-            title: "Settings",
+            title: "Kabinet",
           ),
         ),
       ];
@@ -92,6 +94,9 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PersistentTabView(
         popAllScreensOnTapAnyTabs: true,
+        popActionScreens: PopActionScreensType.all,
+        screenTransitionAnimation:
+            const ScreenTransitionAnimation(duration: Duration(seconds: 1)),
         tabs: _tabs(),
         navBarBuilder: (navBarConfig) => Style1BottomNavBar(
           navBarConfig: navBarConfig,

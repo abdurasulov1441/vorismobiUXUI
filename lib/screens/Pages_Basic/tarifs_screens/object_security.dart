@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/mini_red_app_bar.dart';
 import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
@@ -18,29 +19,11 @@ class ObjectSecurity extends StatelessWidget {
           : AppColors.lightBackgroundColor,
       body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            height: 30,
-            color: AppColors.lightIconGuardColor,
+          MiniRedAppBar(),
+          MiniRedTitle(
+            title: 'Obyektingizni qo\'riqlovga topshiring',
           ),
-          Container(
-            color: AppColors.lightHeaderRed,
-            child: Row(
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: const Icon(Icons.arrow_back)),
-                Text(
-                  'Obyektingizni qo\'riqlovga topshiring',
-                  style: AppStyle.fontStyle.copyWith(
-                      color: AppColors.lightIconGuardColor,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
-          ),
+
           // Image.asset(
           //   'assets/images/saf_bilan.png',
           //   width: 500,
