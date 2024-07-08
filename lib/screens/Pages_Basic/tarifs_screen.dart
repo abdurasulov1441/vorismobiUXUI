@@ -18,9 +18,9 @@ class SendRequestSafingScreen extends StatelessWidget {
               route: '/object_security',
             ),
             ObjectFlatContainer(
-              image: 'assets/images/image.png',
+              image: 'assets/images/flat.png',
               text: 'Xonadoningizni qo\'riqlovga topshiring',
-              route: '/object_security',
+              route: '/flat',
             ),
           ],
         ),

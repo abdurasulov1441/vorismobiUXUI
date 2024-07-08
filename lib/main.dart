@@ -4,12 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/shartnomalar.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/account_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/home_screen.dart';
-import 'package:flutter_application_1/screens/login_screen.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/flat_security.dart';
+import 'package:flutter_application_1/screens/auth_and_reg_pages/login_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/object_security.dart';
 
-import 'package:flutter_application_1/screens/reset_password_screen.dart';
-import 'package:flutter_application_1/screens/signup_screen.dart';
-import 'package:flutter_application_1/screens/verify_email_screen.dart';
+import 'package:flutter_application_1/screens/auth_and_reg_pages/reset_password_screen.dart';
+import 'package:flutter_application_1/screens/auth_and_reg_pages/signup_screen.dart';
+import 'package:flutter_application_1/screens/auth_and_reg_pages/verify_email_screen.dart';
+
 import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:flutter_application_1/services/firebase_streem.dart';
 import 'package:provider/provider.dart';
@@ -54,6 +56,7 @@ class MyApp extends StatelessWidget {
               '/verify_email': (context) => const VerifyEmailScreen(),
               '/object_security': (context) => const ObjectSecurity(),
               '/shartnoma': (context) => const Shartnomalar(),
+              '/flat': (context) => const FlatSecurity(),
             },
             initialRoute: '/',
           );

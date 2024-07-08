@@ -4,7 +4,7 @@ import 'package:flutter_application_1/components/appbar_title.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/account_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/news_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screen.dart';
-import 'package:flutter_application_1/screens/login_screen.dart';
+import 'package:flutter_application_1/screens/auth_and_reg_pages/login_screen.dart';
 import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:video_player/video_player.dart';
@@ -19,39 +19,10 @@ class HomeScreen extends StatelessWidget {
     final user = FirebaseAuth.instance.currentUser;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      backgroundColor: themeProvider.isDarkTheme
-          ? AppColors.lightBackgroundColor
-          : AppColors.darkBackgroundColor,
-      //resizeToAvoidBottomInset: false,
-      // appBar: AppBar(
-      //   backgroundColor: AppColors.headerColor,
-      //   centerTitle: true,
-      //   actions: [
-      //     IconButton(
-      //       onPressed: () {
-      //         if ((user == null)) {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(builder: (context) => const LoginScreen()),
-      //           );
-      //         } else {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //                 builder: (context) => const AccountScreen()),
-      //           );
-      //         }
-      //       },
-      //       icon: Icon(
-      //         Icons.person,
-      //         color: (user == null) ? Colors.black : Colors.yellow,
-      //       ),
-      //     ),
-      //   ],
-      // ),
-      body: (user == null) ? const LoginScreen() : const BottomNavBar(),
-      // bottomNavigationBar: (user == null) ? Text('data') : Text(''),
-    );
+        backgroundColor: themeProvider.isDarkTheme
+            ? AppColors.lightBackgroundColor
+            : AppColors.darkBackgroundColor,
+        body: (user == null) ? const LoginScreen() : const BottomNavBar());
   }
 }
 
@@ -62,32 +33,42 @@ class BottomNavBar extends StatelessWidget {
         PersistentTabConfig(
           screen: const HomePageElements(),
           item: ItemConfig(
-            icon: const Icon(Icons.home),
+            icon: const Icon(
+              Icons.home,
+              color: AppColors.lightHeaderColor,
+            ),
             title: "Sahifa",
           ),
         ),
         PersistentTabConfig(
           screen: const NewsScreen(),
           item: ItemConfig(
-            icon: const Icon(Icons.newspaper),
+            icon: const Icon(
+              Icons.newspaper,
+              color: AppColors.lightHeaderColor,
+            ),
             title: "Yangiliklar",
           ),
         ),
         PersistentTabConfig(
           screen: const SendRequestSafingScreen(),
           item: ItemConfig(
-            icon: const Icon(Icons.book),
+            icon: const Icon(
+              Icons.book,
+              color: AppColors.lightHeaderColor,
+            ),
             title: "Tariflar",
           ),
         ),
-
-        //pushScreenWithoutNavBar(context, MaterialPageRoute(builder: (context) =>));
         PersistentTabConfig(
           screen: const AccountScreen(),
           item: ItemConfig(
-            icon: const Icon(Icons.person),
-            title: "Kabinet",
-          ),
+              icon: const Icon(
+                Icons.person,
+                color: AppColors.lightHeaderColor,
+              ),
+              title: "Kabinet",
+              activeColorSecondary: AppColors.lightHeaderColor),
         ),
       ];
 
@@ -99,6 +80,8 @@ class BottomNavBar extends StatelessWidget {
             const ScreenTransitionAnimation(duration: Duration(seconds: 1)),
         tabs: _tabs(),
         navBarBuilder: (navBarConfig) => Style1BottomNavBar(
+          navBarDecoration:
+              const NavBarDecoration(color: AppColors.lightIconGuardColor),
           navBarConfig: navBarConfig,
         ),
       );
@@ -119,10 +102,10 @@ class _VideoPlayerScreenState extends State<HomePageElements> {
   void initState() {
     super.initState();
     _controllerUZ = VideoPlayerController.asset(
-      'assets/videos/uz.mp4', // Замените URL вашим файлом видео на узбекском языке
+      'assets/videos/uz.mp4',
     );
     _controllerRU = VideoPlayerController.asset(
-      'assets/videos/ru.mp4', // Замените URL вашим файлом видео на русском языке
+      'assets/videos/ru.mp4',
     );
     _controller = _controllerUZ;
     _controller.initialize().then((_) {
@@ -165,7 +148,6 @@ class _VideoPlayerScreenState extends State<HomePageElements> {
                       aspectRatio: _controller.value.aspectRatio,
                       child: GestureDetector(
                         onTap: () {
-                          // Toggle play/pause on tap
                           setState(() {
                             if (_controller.value.isPlaying) {
                               _controller.pause();

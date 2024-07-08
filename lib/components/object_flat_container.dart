@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/object_security.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
 
@@ -12,6 +13,7 @@ class ObjectFlatContainer extends StatelessWidget {
   final String image;
   final String text;
   final String route;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -34,8 +36,7 @@ class ObjectFlatContainer extends StatelessWidget {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context)
-                      .pushNamed(route); //pushNamed('/object_security');
+                  Navigator.of(context).pushNamed(route);
                 },
                 child: Container(
                     width: double.infinity,
@@ -46,11 +47,14 @@ class ObjectFlatContainer extends StatelessWidget {
                           bottomLeft: Radius.circular(15),
                           bottomRight: Radius.circular(15)),
                     ),
-                    child: Center(
-                      child: Text(
-                        text,
-                        style: AppStyle.fontStyle
-                            .copyWith(color: AppColors.lightBackgroundColor),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Center(
+                        child: Text(
+                          text,
+                          style: AppStyle.fontStyle
+                              .copyWith(color: AppColors.lightBackgroundColor),
+                        ),
                       ),
                     )),
               ),
