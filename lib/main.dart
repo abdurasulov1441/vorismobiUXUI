@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
               '/object_security': (context) => const ObjectSecurity(),
               '/shartnoma': (context) => const Shartnomalar(),
               '/flat': (context) => const FlatSecurity(),
-              'from_object': (context) => SimpleForm(),
+              '/from_object': (context) => SimpleForm(),
             },
             initialRoute: '/',
           );

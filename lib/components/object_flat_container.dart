@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/object_security.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
 
@@ -48,7 +47,7 @@ class ObjectFlatContainer extends StatelessWidget {
                           bottomRight: Radius.circular(15)),
                     ),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Center(
                         child: Text(
                           text,
