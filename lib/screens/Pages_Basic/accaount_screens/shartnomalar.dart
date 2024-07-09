@@ -13,7 +13,11 @@ class Shartnomalar extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Column(
-        children: [MiniRedAppBar(), ContractsPage()],
+        children: [
+          MiniRedAppBar(),
+          MiniRedTitle(title: 'Shartnomalar'),
+          ContractsPage()
+        ],
       ),
     );
   }
