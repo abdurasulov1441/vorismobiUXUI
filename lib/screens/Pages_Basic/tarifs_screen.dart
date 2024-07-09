@@ -7,23 +7,21 @@ class SendRequestSafingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: const Column(
-          children: [
-            AppbarTitle(),
-            ObjectFlatContainer(
-              image: 'assets/images/image.png',
-              text: 'Obyektingizni qo\'riqlovga topshiring',
-              route: '/object_security',
-            ),
-            ObjectFlatContainer(
-              image: 'assets/images/flat.png',
-              text: 'Xonadoningizni qo\'riqlovga topshiring',
-              route: '/flat',
-            ),
-          ],
-        ),
+    return const Scaffold(
+      body: Column(
+        children: [
+          AppbarTitle(),
+          ObjectFlatContainer(
+            image: 'assets/images/image.png',
+            text: 'Obyektingizni qo\'riqlovga topshiring',
+            route: '/object_security',
+          ),
+          ObjectFlatContainer(
+            image: 'assets/images/flat.png',
+            text: 'Xonadoningizni qo\'riqlovga topshiring',
+            route: '/flat',
+          ),
+        ],
       ),
     );
   }

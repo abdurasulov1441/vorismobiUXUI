@@ -212,7 +212,7 @@ class IconWithText extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             SvgPicture.asset(
@@ -234,7 +234,7 @@ class IconWithText extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             SvgPicture.asset(
@@ -261,7 +261,7 @@ class IconWithText extends StatelessWidget {
         ),
         Row(
           children: [
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             SvgPicture.asset(
@@ -272,7 +272,7 @@ class IconWithText extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('To\'lov jadvali:'),
+                const Text('To\'lov jadvali:'),
                 Text(
                   '2 581 669 so\'m oyiga',
                   style: AppStyle.fontStyle.copyWith(
@@ -292,143 +292,141 @@ class ContainerWithData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '1. Qo\'riqlovdagi joy: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                'Qurol xonasi',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Karta raqami: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                '508 387',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '1 soat uchun: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                '9 120 ',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-              Text(
-                'so\'m',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '1 oy uchun: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                '1 668 960 ',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-              Text(
-                'so\'m',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '1. Qo\'riqlovdagi joy: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                'Qurol xonasi',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Karta raqami: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                '508 387',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '1 soat uchun: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                '9 120 ',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-              Text(
-                'so\'m',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '1 oy uchun: ',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-              Text(
-                '1 668 960 ',
-                style: AppStyle.fontStyle.copyWith(),
-              ),
-              Text(
-                'so\'m',
-                style: AppStyle.fontStyle
-                    .copyWith(color: AppColors.lightIconGuardColor),
-              ),
-            ],
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '1. Qo\'riqlovdagi joy: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              'Qurol xonasi',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Karta raqami: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              '508 387',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '1 soat uchun: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              '9 120 ',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+            Text(
+              'so\'m',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '1 oy uchun: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              '1 668 960 ',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+            Text(
+              'so\'m',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '1. Qo\'riqlovdagi joy: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              'Qurol xonasi',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Karta raqami: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              '508 387',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '1 soat uchun: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              '9 120 ',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+            Text(
+              'so\'m',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '1 oy uchun: ',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+            Text(
+              '1 668 960 ',
+              style: AppStyle.fontStyle.copyWith(),
+            ),
+            Text(
+              'so\'m',
+              style: AppStyle.fontStyle
+                  .copyWith(color: AppColors.lightIconGuardColor),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
@@ -510,7 +508,7 @@ class FirestForShartnoma extends StatelessWidget {
                 ))
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Row(
@@ -550,13 +548,11 @@ class FirestForShartnoma extends StatelessWidget {
                 border: TableBorder.all(color: Colors.black, width: 1),
                 children: [
               TableRow(children: [
-                Container(
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Qo‘riqlash vaqti:'),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Qo‘riqlash vaqti:'),
+                  ],
                 )
               ])
             ])),
@@ -581,7 +577,7 @@ class FinalDataShartnoma extends StatelessWidget {
           children: [
             Column(
               children: [
-                Text(
+                const Text(
                   'Bu oy uchun to\'lov',
                   style: AppStyle.fontStyle,
                 ),
@@ -592,21 +588,21 @@ class FinalDataShartnoma extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
               child: VerticalDivider(
                 width: 1,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Column(
               children: [
-                Text(
+                const Text(
                   'Bu oy uchun to\'lov',
                   style: AppStyle.fontStyle,
                 ),
@@ -617,12 +613,12 @@ class FinalDataShartnoma extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
           ],
         ),
-        ButtonWithRadius(),
+        const ButtonWithRadius(),
       ],
     );
   }

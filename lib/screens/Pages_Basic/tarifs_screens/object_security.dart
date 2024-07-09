@@ -17,7 +17,7 @@ class ObjectSecurity extends StatelessWidget {
       backgroundColor: themeProvider.isDarkTheme
           ? AppColors.darkBackgroundColor
           : AppColors.lightBackgroundColor,
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             MiniRedAppBar(),

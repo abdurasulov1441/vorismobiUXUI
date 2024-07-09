@@ -14,12 +14,12 @@ class Cards extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         backgroundColor: AppColors.lightIconGuardColor,
         onPressed: () {},
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: AppColors.lightHeaderColor,
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
           MiniRedAppBar(),
           MiniRedTitle(title: 'Mening kartalarim'),
