@@ -16,7 +16,7 @@ class FlatSecurity extends StatelessWidget {
       backgroundColor: themeProvider.isDarkTheme
           ? AppColors.darkBackgroundColor
           : AppColors.lightBackgroundColor,
-      body: Column(
+      body: const Column(
         children: [
           MiniRedAppBar(),
           MiniRedTitle(

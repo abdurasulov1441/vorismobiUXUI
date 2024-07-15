@@ -18,11 +18,12 @@ class _SimpleFormState extends State<SimpleForm> {
         backgroundColor: Colors.red,
       ),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
             DropdownButtonFormField<String>(
-              decoration: InputDecoration(labelText: "Post sonini tanlang"),
+              decoration:
+                  const InputDecoration(labelText: "Post sonini tanlang"),
               value: selectedPost,
               onChanged: (newValue) {
                 setState(() {
@@ -38,7 +39,8 @@ class _SimpleFormState extends State<SimpleForm> {
               }).toList(),
             ),
             DropdownButtonFormField<String>(
-              decoration: InputDecoration(labelText: "Xodim sonini tanlang"),
+              decoration:
+                  const InputDecoration(labelText: "Xodim sonini tanlang"),
               value: selectedEmployee,
               onChanged: (newValue) {
                 setState(() {
@@ -54,7 +56,8 @@ class _SimpleFormState extends State<SimpleForm> {
               }).toList(),
             ),
             DropdownButtonFormField<String>(
-              decoration: InputDecoration(labelText: "Qo'riqlov vaqti tanlang"),
+              decoration:
+                  const InputDecoration(labelText: "Qo'riqlov vaqti tanlang"),
               value: selectedTime,
               onChanged: (newValue) {
                 setState(() {
@@ -72,7 +75,7 @@ class _SimpleFormState extends State<SimpleForm> {
             Spacer(),
             ElevatedButton(
               onPressed: () {},
-              child: Text('Ariza berish'),
+              child: const Text('Ariza berish'),
               // style: ElevatedButton.styleFrom(primary: Colors.green),
             ),
           ],
