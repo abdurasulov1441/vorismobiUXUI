@@ -16,6 +16,29 @@ class Shartnomalar extends StatelessWidget {
         children: [
           MiniRedAppBar(),
           MiniRedTitle(title: 'Shartnomalar'),
+          Padding(
+            padding: EdgeInsets.only(top: 10, left: 10, right: 10),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Shartnomalarimni qidirish',
+                hintStyle: AppStyle.fontStyle,
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: AppColors.lightIconGuardColor,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.lightIconGuardColor,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: AppColors.lightIconGuardColor,
+                  ),
+                ),
+              ),
+            ),
+          ),
           ContractsPage()
         ],
       ),
@@ -25,19 +48,19 @@ class Shartnomalar extends StatelessWidget {
 
 List<Contract> contracts = [
   Contract(
-      type: 'Technical service',
+      type: 'Texnik qo\'riqlash markazlari orqali qo\'riqlash',
       number: '#13548',
       dueDate: '01.08.2024',
       amount: 2581669.00,
       isActive: true),
   Contract(
-      type: 'Annual services',
+      type: 'Qorovullik bo\'linmalari orqali qo\'riqlash',
       number: '#17758',
       dueDate: '01.08.2024',
       amount: 2751120.00,
       isActive: false),
   Contract(
-      type: 'Technical service',
+      type: 'Texnik qo\'riqlash markazlari orqali qo\'riqlash',
       number: '#35684',
       dueDate: '01.08.2024',
       amount: 58120.00,
@@ -89,17 +112,27 @@ class ContractsPage extends StatelessWidget {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text('Contract ${contract.number}'),
-                      Text('Due: ${contract.dueDate}'),
+                      Text('Shartnoma ${contract.number}'),
+                      Text('Keyingi to\'lov: ${contract.dueDate}'),
                       Text('${contract.amount.toStringAsFixed(2)} so\'m'),
                     ],
                   ),
                   trailing: contract.isActive
                       ? ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.lightHeaderRed,
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
                           onPressed: () {},
                           child: const Text('Aktiv',
                               style: TextStyle(color: Colors.green)))
                       : ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.lightHeaderRed,
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
                           onPressed: () {},
                           child: const Text('Bekor qilingan',
                               style: TextStyle(color: Colors.red)))),
