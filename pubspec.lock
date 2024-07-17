@@ -440,6 +440,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  hand_signature:
+    dependency: "direct main"
+    description:
+      name: hand_signature
+      sha256: e007153776b9558234761150b6b3ae98a6b3008e9b824da9911475794a982994
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.3"
   hive:
     dependency: "direct main"
     description:
@@ -837,6 +845,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  syncfusion_flutter_core:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_core
+      sha256: "76c0efa89c79108f043602b0170512f88fcb83156cca7f5ca6dfe17e840bc63d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.1.42"
+  syncfusion_flutter_signaturepad:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_signaturepad
+      sha256: "2226d5e574db4883c970b622593f23ea3f55bbf0e922ba364ad4167593cf2a1d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "26.1.42"
   synchronized:
     dependency: transitive
     description:

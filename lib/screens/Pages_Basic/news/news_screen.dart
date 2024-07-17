@@ -5,6 +5,7 @@ import 'package:flutter_application_1/services/api_news.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
 //import 'package:flutter_custom_carousel_slider/flutter_custom_carousel_slider.dart';
+// ignore: unused_import
 import 'package:http/http.dart' as http;
 
 class NewsPage extends StatefulWidget {
