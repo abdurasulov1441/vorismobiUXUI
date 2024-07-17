@@ -55,6 +55,7 @@ dependencies:
   auto_size_text: ^3.0.0
   syncfusion_flutter_signaturepad: ^26.1.42
   hand_signature: ^3.0.3
+  card_loading: ^0.3.2
 
 dev_dependencies:
   flutter_test:

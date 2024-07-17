@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/appbar_title.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/home_page/home_page_elements.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/account_screen.dart';
-import 'package:flutter_application_1/screens/Pages_Basic/news/news_screen.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/news_screen.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screen.dart';
 import 'package:flutter_application_1/screens/auth_and_reg_pages/login_screen.dart';
 import 'package:flutter_application_1/services/changeColorProvider.dart';
@@ -78,8 +77,8 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) => PersistentTabView(
         popAllScreensOnTapAnyTabs: true,
         popActionScreens: PopActionScreensType.all,
-        screenTransitionAnimation:
-            const ScreenTransitionAnimation(duration: Duration(seconds: 1)),
+        screenTransitionAnimation: const ScreenTransitionAnimation(
+            duration: Duration(milliseconds: 300)),
         tabs: _tabs(),
         navBarBuilder: (navBarConfig) => Style1BottomNavBar(
           navBarDecoration:
@@ -87,65 +86,4 @@ class BottomNavBar extends StatelessWidget {
           navBarConfig: navBarConfig,
         ),
       );
-}
-
-class HomePageElements extends StatelessWidget {
-  const HomePageElements({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          const AppbarTitle(),
-          Expanded(child: VideoPlayerScreen()),
-        ],
-      ),
-    );
-  }
-}
-
-class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({super.key});
-
-  @override
-  _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
-}
-
-class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  late YoutubePlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = YoutubePlayerController(
-      initialVideoId: 'L4VB7rFwryQ', // Add the YouTube video ID here
-      flags: const YoutubePlayerFlags(
-          autoPlay: false,
-          mute: false,
-          forceHD: false,
-          enableCaption: true,
-          showLiveFullscreenButton: false),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: YoutubePlayer(
-        controller: _controller,
-        showVideoProgressIndicator: true,
-        progressIndicatorColor: Colors.amber,
-        onReady: () {
-          _controller.addListener(() {});
-        },
-      ),
-    );
-  }
 }

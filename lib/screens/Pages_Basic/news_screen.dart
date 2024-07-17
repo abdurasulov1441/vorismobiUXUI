@@ -1,5 +1,7 @@
+import 'package:card_loading/card_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
+import 'package:flutter_application_1/components/progress_for_news.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/news/new_detail.dart';
 import 'package:flutter_application_1/services/api_news.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
@@ -45,7 +47,12 @@ class _NewsPageState extends State<NewsPage> {
                   return Center(child: Text("${snapshot.error}"));
                 }
 
-                return Center(child: CircularProgressIndicator());
+                return Column(
+                  children: [
+                    ProgressForNews(),
+                    ProgressForNews(),
+                  ],
+                );
               },
             ),
           ),
