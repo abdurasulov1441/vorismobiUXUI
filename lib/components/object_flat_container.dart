@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 class ObjectFlatContainer extends StatelessWidget {
   const ObjectFlatContainer({
@@ -11,7 +12,7 @@ class ObjectFlatContainer extends StatelessWidget {
   });
   final String image;
   final String text;
-  final String route;
+  final Widget route;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class ObjectFlatContainer extends StatelessWidget {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pushNamed(route);
+                  pushScreenWithoutNavBar(context, route);
                 },
                 child: Container(
                     width: double.infinity,

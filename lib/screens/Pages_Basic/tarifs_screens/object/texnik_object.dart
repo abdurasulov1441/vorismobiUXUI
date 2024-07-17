@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
-class SimpleForm extends StatefulWidget {
+class TexnikObject extends StatelessWidget {
+  const TexnikObject({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TexnikObject1();
+  }
+}
+
+class TexnikObject1 extends StatefulWidget {
   @override
   _SimpleFormState createState() => _SimpleFormState();
 }
 
-class _SimpleFormState extends State<SimpleForm> {
+class _SimpleFormState extends State<TexnikObject1> {
   String? selectedPost;
   String? selectedEmployee;
   String? selectedTime;

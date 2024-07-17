@@ -1,4 +1,3 @@
-import 'package:card_loading/card_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
 import 'package:flutter_application_1/components/progress_for_news.dart';

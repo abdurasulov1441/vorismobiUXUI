@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/appbar_title.dart';
-import 'package:flutter_application_1/components/progress_for_news.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/shartnomalar.dart';
 import 'package:flutter_application_1/screens/Pages_Basic/accaount_screens/visacard.dart';
 import 'package:flutter_application_1/components/imzoqoyish.dart';
