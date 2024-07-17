@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/button.dart';
 import 'package:flutter_application_1/components/mini_red_app_bar.dart';
@@ -484,7 +485,8 @@ class AdressData extends StatelessWidget {
             SizedBox(
               width: 300,
               height: 50,
-              child: Text(
+              child: AutoSizeText(
+                maxLines: 2,
                 'M.Ulug\'bek tumani A.Navoiy MFY Shodlik ko\'chasi 17-uy',
                 style: AppStyle.fontStyle.copyWith(fontWeight: FontWeight.bold),
               ),
@@ -504,9 +506,10 @@ class AdressData extends StatelessWidget {
             SizedBox(
               width: 250,
               height: 50,
-              child: Text(
+              child: AutoSizeText(
                 'Rahimov Voris Avazbeek o\'g\'li',
                 style: AppStyle.fontStyle.copyWith(fontWeight: FontWeight.bold),
+                maxLines: 2,
               ),
             ),
           ],

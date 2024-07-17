@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/mini_red_app_bar.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
+import 'package:flutter_flip_card/flipcard/flip_card.dart';
+import 'package:flutter_flip_card/flutter_flip_card.dart';
 
 import 'package:u_credit_card/u_credit_card.dart';
 
@@ -53,22 +55,31 @@ class CardList extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return const CreditCardUi(
-                    cardHolderFullName: 'John Doe',
-                    cardNumber: '1234567812345678',
-                    // validFrom: '01/23',
-                    validThru: '01/28',
-                    topLeftColor: Colors.blue,
-                    doesSupportNfc: true,
-                    placeNfcIconAtTheEnd: true,
-                    cardType: CardType.debit,
-                    cardProviderLogo: FlutterLogo(),
-                    cardProviderLogoPosition: CardProviderLogoPosition.right,
-                    showBalance: true,
-                    balance: 128.32434343,
-                    autoHideBalance: true,
-                    enableFlipping: false,
-                    cvvNumber: '123',
+                  var con;
+                  return FlipCard(
+                    rotateSide: RotateSide.right,
+                    disableSplashEffect: false,
+                    splashColor: Colors.orange,
+                    onTapFlipping: true,
+                    axis: FlipAxis.vertical,
+                    controller: con,
+                    frontWidget: Center(
+                      child: Container(
+                        width: 300,
+                        height: 200,
+                        child: Image.asset(
+                          'assets/images/set.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    backWidget: Container(
+                        width: 300,
+                        height: 200,
+                        child: Image.asset(
+                          'assets/images/set.png',
+                          fit: BoxFit.contain,
+                        )),
                   );
                 })));
   }
