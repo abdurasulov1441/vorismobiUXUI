@@ -36,4 +36,26 @@ class ThemeProvider with ChangeNotifier {
         dividerColor: AppColors.darkDividerColor,
         iconTheme: const IconThemeData(color: AppColors.darkIconColor),
       );
+
+  Map<String, TimeOfDay> startTimes = {
+    'Ish kunlari_start': TimeOfDay.now(),
+    'Shanba Yakshanba kunlari_start': TimeOfDay.now(),
+    'Bayram kunlari_start': TimeOfDay.now(),
+  };
+
+  Map<String, TimeOfDay> endTimes = {
+    'Ish kunlari_end': TimeOfDay.now(),
+    'Shanba Yakshanba kunlari_end': TimeOfDay.now(),
+    'Bayram kunlari_end': TimeOfDay.now(),
+  };
+
+  void updateStartTime(String label, TimeOfDay newTime) {
+    startTimes[label] = newTime;
+    notifyListeners();
+  }
+
+  void updateEndTime(String label, TimeOfDay newTime) {
+    endTimes[label] = newTime;
+    notifyListeners();
+  }
 }
