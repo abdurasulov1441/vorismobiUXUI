@@ -100,10 +100,15 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                _buildTimePickerSection(
-                    'Harakat sezgi sensorlar orqali', context),
-                SizedBox(height: 20),
-                _buildTimePickerSection('Tashvish tugmasi orqali', context),
+                if (_selectedItem2 == 'Harakat sezgi sensorlar bilan' ||
+                    _selectedItem2 ==
+                        'Harakat sezgi sensorlar va tashvish tugmasi bilan')
+                  _buildTimePickerSection(
+                      'Harakat sezgi sensorlar orqali', context),
+                if (_selectedItem2 == 'Tashvish tugmasi bilan' ||
+                    _selectedItem2 ==
+                        'Harakat sezgi sensorlar va tashvish tugmasi bilan')
+                  _buildTimePickerSection('Tashvish tugmasi orqali', context),
               ],
             ),
           ),
@@ -125,9 +130,9 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
       children: [
         Text(title,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-        _buildTimePickerRow('Ish kunlari', context),
-        _buildTimePickerRow('Shanba Yakshanba kunlari', context),
-        _buildTimePickerRow('Bayram kunlari', context),
+        _buildTimePickerRow('${title}_Ish kunlari', context),
+        _buildTimePickerRow('${title}_Shanba Yakshanba kunlari', context),
+        _buildTimePickerRow('${title}_Bayram kunlari', context),
       ],
     );
   }
@@ -140,7 +145,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         children: <Widget>[
           Expanded(
             flex: 2,
-            child: Text(label, style: TextStyle(fontSize: 12)),
+            child: Text(label.split('_').last, style: TextStyle(fontSize: 12)),
           ),
           Flexible(
             child: IconButton(
@@ -185,62 +190,86 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        ElevatedButton(
-          onPressed: () {
-            _showModal(
-              context,
-              [
-                'Bank',
-                'Ishlab chiqarish',
-                'Zargarlik do\'kon',
-                'Spirtli ichimlik do\'kon',
-                'Go\'zallik saloni',
-                'Avto salon',
-                'Xususiy klinika'
-              ],
-              (selectedItem) {
-                _selectedItem1 = selectedItem;
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                _showModal(
+                  context,
+                  [
+                    'Bank',
+                    'Ishlab chiqarish',
+                    'Zargarlik do\'kon',
+                    'Spirtli ichimlik do\'kon',
+                    'Go\'zallik saloni',
+                    'Avto salon',
+                    'Xususiy klinika'
+                  ],
+                  (selectedItem) {
+                    setState(() {
+                      _selectedItem1 = selectedItem;
+                    });
+                  },
+                );
               },
-            );
-          },
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(_selectedItem1 ?? 'Tanlang', style: TextStyle(fontSize: 14)),
-              Icon(Icons.arrow_drop_down, size: 20),
-            ],
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(_selectedItem1 ?? 'Tanlang',
+                      style: TextStyle(fontSize: 14)),
+                  Icon(Icons.arrow_drop_down, size: 20),
+                ],
+              ),
+            ),
           ),
         ),
         SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {
-            _showModal(
-              context,
-              [
-                'Harakat sezgi sensorlar bilan',
-                'Tashvish tugmasi bilan',
-                'Harakat sezgi sensorlar va tashvish tugmasi bilan'
-              ],
-              (selectedItem) {
-                _selectedItem2 = selectedItem;
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                _showModal(
+                  context,
+                  [
+                    'Harakat sezgi sensorlar bilan',
+                    'Tashvish tugmasi bilan',
+                    'Harakat sezgi sensorlar va tashvish tugmasi bilan'
+                  ],
+                  (selectedItem) {
+                    setState(() {
+                      _selectedItem2 = selectedItem;
+                    });
+                  },
+                );
               },
-            );
-          },
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(_selectedItem2 ?? 'Tanlang', style: TextStyle(fontSize: 14)),
-              Icon(Icons.arrow_drop_down, size: 20),
-            ],
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(_selectedItem2 ?? 'Tanlang',
+                      style: TextStyle(fontSize: 14)),
+                  Icon(Icons.arrow_drop_down, size: 20),
+                ],
+              ),
+            ),
           ),
         ),
         SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {
-            _showTimeModal(context);
-          },
-          child:
-              Text('Vaqt oralig\'ini kiriting', style: TextStyle(fontSize: 14)),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                _showTimeModal(context);
+              },
+              child: Text('Vaqt oralig\'ini kiriting',
+                  style: TextStyle(fontSize: 14)),
+            ),
+          ),
         ),
         SizedBox(height: 20),
         Text(_selectedItem1 ?? 'No item selected',
