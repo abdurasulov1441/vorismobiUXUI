@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/mini_red_app_bar.dart';
+import 'package:flutter_application_1/screens/Pages_Basic/tarifs_screens/object/ariza_texnik_object.dart';
 import 'package:flutter_application_1/services/changeColorProvider.dart';
 import 'package:flutter_application_1/style/app_colors.dart';
 import 'package:flutter_application_1/style/app_style.dart';
@@ -509,21 +510,6 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
                 style: AppStyle.fontStyle
                     .copyWith(color: AppColors.lightHeaderColor))),
       ],
-    );
-  }
-}
-
-class ArizaTexnikObyekt extends StatelessWidget {
-  const ArizaTexnikObyekt({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
-          children: [],
-        ),
-      ),
     );
   }
 }

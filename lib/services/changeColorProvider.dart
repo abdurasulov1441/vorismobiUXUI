@@ -49,4 +49,15 @@ class ThemeProvider with ChangeNotifier {
     endTimes[label] = time;
     notifyListeners();
   }
+
+  String _imagePath = 'assets/images/step1.svg';
+
+  String get imagePath => _imagePath;
+
+  void changeImage() {
+    _imagePath = _imagePath == 'assets/images/step1.svg'
+        ? 'assets/images/step2.svg'
+        : 'assets/images/step2.svg';
+    notifyListeners();
+  }
 }
