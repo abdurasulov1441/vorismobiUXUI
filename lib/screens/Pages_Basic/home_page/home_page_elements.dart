@@ -11,14 +11,14 @@ class HomePageElements extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: const Column(
             children: [
               AppbarTitle(),
-              // Expanded(child: VideoPlayerScreen()),
+              Expanded(child: VideoPlayerScreen()),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [

@@ -29,6 +29,8 @@ dependencies:
   youtube_player_flutter: ^8.1.2
   auto_size_text: ^3.0.0
   card_loading: ^0.3.2
+  flutter_carousel_media_slider: ^0.0.2
+  custom_video_player: ^1.0.9
 
 
 
