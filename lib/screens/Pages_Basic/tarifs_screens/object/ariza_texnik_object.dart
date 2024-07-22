@@ -89,15 +89,49 @@ class _MultiStepFormState extends State<MultiStepForm> {
           ),
           _currentStep < 3
               ? Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: AppColors.lightIconGuardColor,
+                        backgroundColor: Colors.white, // Text color
+                        side: BorderSide(
+                            color: AppColors.lightIconGuardColor,
+                            width: 2), // Border color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(14), // Rounded corners
+                        ),
+                      ),
                       onPressed: _currentStep > 0 ? _previousStep : null,
-                      child: const Text('Oldingisi'),
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_back,
+                              color: AppColors.lightIconGuardColor),
+                          SizedBox(width: 4),
+                          Text('Oldingisi'),
+                        ],
+                      ),
                     ),
+                    SizedBox(width: 16), // Space between buttons
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor:
+                            AppColors.lightIconGuardColor, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(14), // Rounded corners
+                        ),
+                      ),
                       onPressed: _currentStep < 3 ? _nextStep : null,
-                      child: const Text('Keyingisi'),
+                      child: Row(
+                        children: [
+                          Text('Keyingisi'),
+                          SizedBox(width: 4),
+                          Icon(Icons.arrow_forward, color: Colors.white),
+                        ],
+                      ),
                     ),
                   ],
                 )

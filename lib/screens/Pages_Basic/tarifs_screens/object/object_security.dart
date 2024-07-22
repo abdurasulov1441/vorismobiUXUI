@@ -28,8 +28,8 @@ class ObjectSecurity extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            ObjectFlatContainer(
-                image: 'assets/images/default.png',
+            CustomScreenWithImage(
+                image: 'assets/images/texnik_test2.png',
                 text: 'Texnik qo\'riqlash markazlari orqali qo\'riqlash',
                 route: TexnikObject()),
             SizedBox(
