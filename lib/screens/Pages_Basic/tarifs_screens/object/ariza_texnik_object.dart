@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/mini_red_app_bar.dart';
-import 'package:flutter_application_1/components/progres_step.dart';
-import 'package:flutter_page_stepper/flutter_page_stepper.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ArizaTexnikObyekt extends StatelessWidget {

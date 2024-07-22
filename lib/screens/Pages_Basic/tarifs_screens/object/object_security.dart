@@ -30,19 +30,6 @@ class ObjectSecurity extends StatelessWidget {
             ),
             ObjectFlatContainer(
                 image: 'assets/images/default.png',
-                text: 'Saf bo\'linmalari orqali qo\'riqlash',
-                route: ObjectSecurity()),
-            ObjectFlatContainer(
-                image: 'assets/images/default.png',
-                text:
-                    'Xarbiylashtirilgan qo\'riqlash bo\'linmalari orqali qo\'riqlash',
-                route: ObjectSecurity()),
-            ObjectFlatContainer(
-                image: 'assets/images/default.png',
-                text: 'Qorovullik bo\'linmalari orqali qo\'riqlash',
-                route: ObjectSecurity()),
-            ObjectFlatContainer(
-                image: 'assets/images/default.png',
                 text: 'Texnik qo\'riqlash markazlari orqali qo\'riqlash',
                 route: TexnikObject()),
             SizedBox(
