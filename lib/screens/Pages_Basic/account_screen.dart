@@ -95,8 +95,8 @@ class _AccountScreenState extends State<AccountScreen> {
             const CircleAvatar(
               backgroundColor: AppColors.lightBackgroundColor,
               radius: 50, // Radius of the inner circle (avatar)
-              backgroundImage: AssetImage(
-                  'assets/images/avatar.png'), // Image for the avatar
+              backgroundImage: NetworkImage(
+                  'https://appdata.uz/qbb-data/avatar.png'), // Image for the avatar
             ),
             Text(
               'Raximov Voris Avazbek o\'g\'li',
@@ -113,8 +113,8 @@ class _AccountScreenState extends State<AccountScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/house.png',
+                Image.network(
+                  'https://appdata.uz/qbb-data/house.png',
                   width: 60,
                   height: 60,
                 ),
@@ -150,13 +150,13 @@ class _AccountScreenState extends State<AccountScreen> {
                   width: 20,
                   // height: 20,
                 ),
-                Image.asset(
-                  'assets/images/lock.png',
+                Image.network(
+                  'https://appdata.uz/qbb-data/lock.png',
                   width: 60,
                   height: 60,
                 ),
-                Image.asset(
-                  'assets/images/emerency_on.png',
+                Image.network(
+                  'https://appdata.uz/qbb-data/emerency_on.png',
                   width: 60,
                   height: 60,
                 )
@@ -172,8 +172,8 @@ class _AccountScreenState extends State<AccountScreen> {
                   itemCount: name.length,
                   itemBuilder: (context, index) {
                     return ListTile(
-                        leading: SvgPicture.asset(
-                          'assets/images/${image[index]}',
+                        leading: SvgPicture.network(
+                          'https://appdata.uz/qbb-data/${image[index]}',
                           width: 30,
                           height: 30,
                         ),

@@ -361,8 +361,8 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  SvgPicture.asset(
-                    'assets/images/3.svg',
+                  SvgPicture.network(
+                    'https://appdata.uz/qbb-data/3.svg',
                     height: 30.0,
                     width: 30.0,
                   ),
@@ -425,8 +425,8 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  SvgPicture.asset(
-                    'assets/images/1.svg',
+                  SvgPicture.network(
+                    'https://appdata.uz/qbb-data/1.svg',
                     height: 30.0,
                     width: 30.0,
                   ),
@@ -477,8 +477,8 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  SvgPicture.asset(
-                    'assets/images/2.svg',
+                  SvgPicture.network(
+                    'https://appdata.uz/qbb-data/2.svg',
                     height: 30.0,
                     width: 30.0,
                   ),

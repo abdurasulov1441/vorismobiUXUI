@@ -149,8 +149,8 @@ class _MultiStepFormState extends State<MultiStepForm> {
       children: [
         Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: SvgPicture.asset(
-              'assets/images/step1.svg',
+            child: SvgPicture.network(
+              'https://appdata.uz/qbb-data/step1.svg',
               width: 50,
               height: 50,
             )),
@@ -176,8 +176,8 @@ class _MultiStepFormState extends State<MultiStepForm> {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Container(
-            child: SvgPicture.asset(
-          'assets/images/step2.svg',
+            child: SvgPicture.network(
+          'https://appdata.uz/qbb-data/step2.svg',
           width: 50,
           height: 50,
         )),
@@ -454,8 +454,8 @@ class _MultiStepFormState extends State<MultiStepForm> {
       children: [
         Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: SvgPicture.asset(
-              'assets/images/step3.svg',
+            child: SvgPicture.network(
+              'https://appdata.uz/qbb-data/step3.svg',
               width: 50,
               height: 50,
             )),
@@ -470,7 +470,7 @@ class _MultiStepFormState extends State<MultiStepForm> {
         const SizedBox(
           height: 20,
         ),
-        SvgPicture.asset('assets/images/ariza_muvofaqiyat.svg'),
+        SvgPicture.network('https://appdata.uz/qbb-data/ariza_muvofaqiyat.svg'),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

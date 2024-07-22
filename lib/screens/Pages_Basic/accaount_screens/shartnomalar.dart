@@ -249,8 +249,8 @@ class IconWithText extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            SvgPicture.asset(
-              'assets/images/elektrik.svg',
+            SvgPicture.network(
+              'https://appdata.uz/qbb-data/elektrik.svg',
               width: 50,
               height: 50,
             ),
@@ -271,8 +271,8 @@ class IconWithText extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            SvgPicture.asset(
-              'assets/images/simkarta.svg',
+            SvgPicture.network(
+              'https://appdata.uz/qbb-data/simkarta.svg',
               width: 50,
               height: 50,
             ),
@@ -298,8 +298,8 @@ class IconWithText extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            SvgPicture.asset(
-              'assets/images/tolov_jadvali.svg',
+            SvgPicture.network(
+              'https://appdata.uz/qbb-data/tolov_jadvali.svg',
               width: 50,
               height: 50,
             ),

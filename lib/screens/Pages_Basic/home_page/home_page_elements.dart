@@ -13,55 +13,59 @@ class HomePageElements extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          child: const Column(
-            children: [
-              AppbarTitle(),
-              Expanded(child: VideoPlayerScreen()),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Column(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: 1000,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  OuterContainer(
-                      text:
-                          'Fuqarolar yashash uylarida oldi olingan o’g’irliklar',
-                      icon: 'assets/images/home_page_1.svg',
-                      number: '535',
-                      colorborder: AppColors.homeLightBlue,
-                      backColor: AppColors.homeLightBlue2),
-                  OuterContainer(
-                      text: 'Qo’riqlovdagi fuqarolar yashash uylari',
-                      icon: 'assets/images/home_page_2.svg',
-                      number: '33 755',
-                      colorborder: AppColors.homePink,
-                      backColor: AppColors.homePink2),
+                  AppbarTitle(),
+                  // VideoPlayerScreen(),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      OuterContainer(
+                          text:
+                              'Fuqarolar yashash uylarida oldi olingan o’g’irliklar',
+                          icon: 'https://appdata.uz/qbb-data/home_page_1.svg',
+                          number: '535',
+                          colorborder: AppColors.homeLightBlue,
+                          backColor: AppColors.homeLightBlue2),
+                      OuterContainer(
+                          text: 'Qo’riqlovdagi fuqarolar yashash uylari',
+                          icon: 'https://appdata.uz/qbb-data/home_page_2.svg',
+                          number: '33 755',
+                          colorborder: AppColors.homePink,
+                          backColor: AppColors.homePink2),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      OuterContainer(
+                          text: 'Obyektlarda oldi olingan o’g’irliklar',
+                          icon: 'https://appdata.uz/qbb-data/home_page_3.svg',
+                          number: '435',
+                          colorborder: AppColors.homeOrange,
+                          backColor: AppColors.homeOrange2),
+                      OuterContainer(
+                          text: 'Qo’riqlovdagi obyektlar',
+                          icon: 'https://appdata.uz/qbb-data/home_page_4.svg',
+                          number: '51 584',
+                          colorborder: AppColors.homeDarkBlue,
+                          backColor: AppColors.homeDarkBlue2),
+                    ],
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  OuterContainer(
-                      text: 'Obyektlarda oldi olingan o’g’irliklar',
-                      icon: 'assets/images/home_page_3.svg',
-                      number: '435',
-                      colorborder: AppColors.homeOrange,
-                      backColor: AppColors.homeOrange2),
-                  OuterContainer(
-                      text: 'Qo’riqlovdagi obyektlar',
-                      icon: 'assets/images/home_page_4.svg',
-                      number: '51 584',
-                      colorborder: AppColors.homeDarkBlue,
-                      backColor: AppColors.homeDarkBlue2),
-                ],
-              ),
-              SizedBox(
-                height: 600,
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -163,7 +167,7 @@ class OuterContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
+                  SvgPicture.network(
                     icon,
                     width: 25,
                     height: 25,

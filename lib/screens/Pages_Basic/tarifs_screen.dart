@@ -14,12 +14,12 @@ class SendRequestSafingScreen extends StatelessWidget {
         children: [
           AppbarTitle(),
           ObjectFlatContainer(
-            image: 'assets/images/image.png',
+            image: 'https://appdata.uz/qbb-data/image.png',
             text: 'Obyektingizni qo\'riqlovga topshiring',
             route: ObjectSecurity(),
           ),
           ObjectFlatContainer(
-            image: 'assets/images/flat.png',
+            image: 'https://appdata.uz/qbb-data/flat.png',
             text: 'Xonadoningizni qo\'riqlovga topshiring',
             route: FlatSecurity(),
           ),
